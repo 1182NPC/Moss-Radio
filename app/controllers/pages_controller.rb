@@ -4,6 +4,5 @@ class PagesController < ApplicationController
   def home
     @chatroom = Chatroom.find(1)
     @message = Message.new
-  
   end
 end
