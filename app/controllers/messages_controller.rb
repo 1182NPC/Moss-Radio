@@ -5,9 +5,9 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.user = current_user
     if @message.save
-      ChatroomChannel.broadcase_to(
+      ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: {message: @message})
+        render_to_string(partial: "shared/message", locals: {message: @message})
       )
       head :ok
     else
