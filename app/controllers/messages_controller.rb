@@ -1,11 +1,11 @@
 class MessagesController < ApplicationController
   def create
-    @chatroom = Chatroom.find(params[1])
+    @chatroom = Chatroom.find(1)
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
     @message.user = current_user
     if @message.save
-      redirect_to chatroom_path(@chatroom)
+      redirect_to root_path
     else
       render "chatrooms/show", status: :unprocessable_entity
     end
