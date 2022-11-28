@@ -1,7 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<div class="container chatroom">
+<div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>">
+
   <h1>#<%= @chatroom.name %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
@@ -22,4 +23,5 @@
   <% end %>
 
   <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button>
+
 </div>
