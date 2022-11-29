@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
 
 somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1287781423&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1299224062&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
@@ -18,10 +19,10 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
             "https://www.youtube.com/embed/KGwDl_0mAys"]
 
 puts 'Cleaning up database...'
-Post.delete_all
-Radioset.delete_all
-Resident.delete_all
-Message.delete_all
+Post.destroy_all
+Radioset.destroy_all
+Resident.destroy_all
+Message.destroy_all
 
 puts 'Creating seeds...'
 
@@ -33,6 +34,7 @@ end
   Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample)
 end
 
-somelinks.each do |link|
-  Radioset.create(audio_link: link, resident_id: Resident.all.sample.id)
+
+100.times do
+  Radioset.create(audio_link: somelinks.sample, resident_id: Resident.all.sample.id, date: Faker::Time.between(from: 30.days.ago, to: Time.now + 30.days), title: "Placeholder" )
 end
