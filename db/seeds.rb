@@ -35,6 +35,6 @@ end
 end
 
 
-100.times do
-  Radioset.create(audio_link: somelinks.sample, resident_id: Resident.all.sample.id, date: Faker::Time.between(from: 30.days.ago, to: Time.now + 30.days), title: "Placeholder" )
+somelinks.each do |link|
+  Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "Placeholder" )
 end
