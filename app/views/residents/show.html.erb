@@ -1,0 +1,3 @@
+<%= @resident.bio %>
+<%= link_to "Edit this resident", edit_resident_path, class:"btn btn-secondary"%>
+<%= link_to "Delete this resident", resident_path(@resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger"%>
