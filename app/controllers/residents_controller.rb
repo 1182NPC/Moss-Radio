@@ -11,7 +11,7 @@ class ResidentsController < ApplicationController
 
   def create
     #TODO: MAKE ADMIN ONLY
-    @resident = set_resident
+    @resident = Resident.new(resident_params)
     if @resident.save
       redirect_to resident_path(@resident)
     else
@@ -35,10 +35,6 @@ class ResidentsController < ApplicationController
 
   def set_resident
     @resident = Resident.find(params[:id])
-  end
-
-  def set_radioset
-    @radioset = Radioset.find(params[:id])
   end
 
   def resident_params
