@@ -14,14 +14,19 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
 num = 0
 
 puts 'Cleaning up database...'
+Post.delete_all
 Radioset.delete_all
 Resident.delete_all
 Message.delete_all
 
 puts 'Creating seeds...'
 
-5.times do
-  Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}")
+20.times do
+  Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
+end
+
+20.times do
+  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph, date_published: Faker::Date.backward, author: Faker::Ancient.god)
 end
 
 somelinks.each do |link|
