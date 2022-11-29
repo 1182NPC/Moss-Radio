@@ -22,13 +22,6 @@
             <li> <%=  link_to set.title, edit_radioset_path(set) %> </li>
           <% end %>
         </ul>
-
-      <p>Upcoming sets: </p>
-        <ul>
-          <% resident.radiosets.where('date > ?', DateTime.now).each do |set| %>
-            <li> <%=  link_to set.title, edit_radioset_path(set) %> </li>
-          <% end %>
-        </ul>
     <% end %>
   </div>
 </div>
