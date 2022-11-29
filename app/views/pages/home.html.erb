@@ -3,6 +3,7 @@
 
 <%# THIS IS SOME CODE TO ADD TO THE NAVBAR LATER %>
 
+<%# CHAT--------------------------------------CHAT %>
 <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>">
 
   <h1>#<%= @chatroom.name %></h1>
@@ -25,6 +26,7 @@
   <% end %>
 
   <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button>
+<%# CHAT--------------------------------------CHAT %>
 
 
 <%# Resident index %>
