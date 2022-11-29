@@ -27,4 +27,17 @@
   <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button>
 
 
+<%# Resident index %>
+  <div>
+    <ul>
+      <% @residents.each do |resident| %>
+        <li><%= link_to resident.name, resident_path(resident) %></li>
+      <% end %>
+    </ul>
+  </div>
+<%# Resident index %>
+
+  <%= link_to "See all radiosets", radiosets_path, class:"btn btn-info" %>
+  <%= link_to "See Blog", posts_path, class:"btn btn-info" %>
+
 </div>
