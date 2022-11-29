@@ -8,8 +8,10 @@ class PagesController < ApplicationController
     @radiosets = Radioset.all
   end
 
-  def admin_page
+  def dashboard
     @residents = Resident.all
+    @posts = Post.all
     @radiosets = Radioset.all
   end
+
 end
