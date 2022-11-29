@@ -1,1 +1,19 @@
-<h1>Welcome to the admin dashboard</h1>
+<div class = "container">
+  <h1>Welcome to the admin dashboard</h1>
+
+  <div class = "residents-collapsable">
+    <% @residents.each do |resident| %>
+      <%= resident.name %>
+      <%= resident.sets %>
+    <% end %>
+<%= link_to 'Create new post', new_post_path, class:"btn btn-primary"  %>
+  </div>
+
+  <div class = "radiosets-callapsable">
+    <%= @radiosets %>
+  </div>
+
+  <div class = "posts-collapsable">
+    <%= @posts %>
+  </div>
+</div>
