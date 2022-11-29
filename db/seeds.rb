@@ -11,7 +11,6 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
             "https://www.youtube.com/embed/iXAbte4QXKs",
             "https://www.youtube.com/embed/Njk2YAgNMnE"]
 
-
 puts 'Cleaning up database...'
 Post.destroy_all
 Radioset.destroy_all
