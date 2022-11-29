@@ -24,7 +24,7 @@ puts 'Creating seeds...'
 end
 
 20.times do
-  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph, date_published: Faker::Date.backward, author: Faker::Ancient.god)
+  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample)
 end
 
 somelinks.each do |link|
