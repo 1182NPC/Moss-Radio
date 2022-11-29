@@ -1,0 +1,7 @@
+<%= simple_form_for [@post] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :content %>
+  <%= f.input :date_published, as: :date, html5: true %>
+  <%= f.submit class: "btn btn-success"%>
+<% end %>
