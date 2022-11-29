@@ -3,5 +3,6 @@
   <%= post.author %>
   <%= post.date_published %>
   <%= post.content %>
+<%= link_to 'View post', post_path(post), class:"btn btn-primary"  %>
 <% end %>
 <%= link_to 'Create new post', new_post_path, class:"btn btn-primary"  %>
