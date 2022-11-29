@@ -15,7 +15,7 @@ class ResidentsController < ApplicationController
     @resident = Resident.new(resident_params)
     if @resident.save
       # WHICH PATH
-      redirect_to resident_path(@resident)
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entitiy
     end
@@ -29,7 +29,7 @@ class ResidentsController < ApplicationController
     #TODO: MAKE ADMIN ONLY
     @resident = set_resident
     @resident.update(resident_params)
-    redirect_to resident_path(@resident)
+    redirect_to dashboard_path
   end
 
   def destroy
