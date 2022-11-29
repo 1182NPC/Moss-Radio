@@ -7,7 +7,11 @@
 
   <%# TODO: Each collapsable can be filtered by search - each collapsable item has a small edit and delete button %>
 
-  <%# TODO: Instead of no. of sets have previous sets and future sets %>
+  <%# TODO: Instead of no. of sets have past sets and upcoming sets %>
+
+  <%# TODO: Past-sets and upcoming-sets are links in of themselves - they produce a popup which shows a list of links to that resident's particular past or upcoming sets - these then also have edit and delete buttons?! %>
+
+  <%# TODO: Actually make these three options into three collapsables %>
 
   <div class = "residents-collapsable">
     <% @residents.each do |resident| %>
@@ -24,5 +28,7 @@
 </div>
 
 <div class = "posts-collapsable">
-  <%= @posts %>
+  <% @posts.each do |post| %>
+    <%= link_to post.title, post_path(post) %>
+  <% end %>
 </div>
