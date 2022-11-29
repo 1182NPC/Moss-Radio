@@ -24,5 +24,12 @@
 
   <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button>
 
+  <div>
+    <ul>
+      <% @residents.each do |resident| %>
+        <li><%= link_to resident.name, resident_path(resident) %></li>
+      <% end %>
+    </ul>
+  </div>
 
 </div>
