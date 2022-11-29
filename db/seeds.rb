@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
 
 somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1287781423&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1299224062&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
@@ -29,5 +30,5 @@ end
 
 
 100.times do
-  Radioset.create(audio_link: somelinks.sample, resident_id: Resident.all.sample.id, date: Faker::Time.between(from: 30.days.ago, to: Time.now + 30.days), title: "#{Faker::Music.genre} #{Faker::WarhammerFantasy.hero}" )
+  Radioset.create(audio_link: somelinks.sample, resident_id: Resident.all.sample.id, date: Faker::Time.between(from: 30.days.ago, to: Time.now + 30.days), title: "Placeholder" )
 end

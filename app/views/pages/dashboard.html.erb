@@ -16,8 +16,19 @@
   <div class = "residents-collapsable">
     <% @residents.each do |resident| %>
       <%= link_to resident.name, resident_path(resident) %>
-      <p>Past sets: <%= resident.radiosets.where('date > ?', DateTime.now).each { |set| link_to set.title, } %> </p>
-      <p>Upcoming sets: <%= resident.radiosets.where('date < ?', DateTime.now).length%> </p>
+      <p>Past sets:</p>
+        <ul>
+          <% resident.radiosets.where('date > ?', DateTime.now).each do |set| %>
+            <li> <%=  link_to set.title, edit_radioset_path(set) %> </li>
+          <% end %>
+        </ul>
+
+      <p>Upcoming sets: </p>
+        <ul>
+          <% resident.radiosets.where('date > ?', DateTime.now).each do |set| %>
+            <li> <%=  link_to set.title, edit_radioset_path(set) %> </li>
+          <% end %>
+        </ul>
     <% end %>
   </div>
 </div>
