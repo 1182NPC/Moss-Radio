@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :residents do
     resources :radiosets
   end
+
+  get '/residents/:id', to: 'residents#dashboard', as: 'dashboard'
 end
