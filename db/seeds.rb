@@ -13,10 +13,10 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
 
 
 puts 'Cleaning up database...'
-Post.delete_all
-Radioset.delete_all
-Resident.delete_all
-Message.delete_all
+Post.destroy_all
+Radioset.destroy_all
+Resident.destroy_all
+Message.destroy_all
 
 puts 'Creating seeds...'
 
@@ -28,6 +28,7 @@ end
   Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph, date_published: Faker::Date.backward, author: Faker::Ancient.god)
 end
 
-somelinks.each do |link|
-  Radioset.create(audio_link: link, resident_id: Resident.all.sample.id)
+
+100.times do
+  Radioset.create(audio_link: somelinks.sample, resident_id: Resident.all.sample.id, date: Faker::Time.between(from: 30.days.ago, to: Time.now + 30.days), title: "#{Faker::Music.genre} #{Faker::WarhammerFantasy.hero}" )
 end

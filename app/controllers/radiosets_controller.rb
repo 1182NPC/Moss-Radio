@@ -32,6 +32,8 @@ class RadiosetsController < ApplicationController
     @radioset.resident = @resident
   end
 
+  
+
   def update
     #TODO: MAKE ADMIN ONLY
     @radioset = set_radioset

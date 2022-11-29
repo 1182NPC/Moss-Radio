@@ -7,7 +7,7 @@
 
   <%# TODO: Each collapsable can be filtered by search - each collapsable item has a small edit and delete button %>
 
-  <%# TODO: Instead of no. of sets have past sets and upcoming sets %>
+  <%# TODO: Instead of no. of sets have past sets and upcoming sets - DONE%>
 
   <%# TODO: Past-sets and upcoming-sets are links in of themselves - they produce a popup which shows a list of links to that resident's particular past or upcoming sets - these then also have edit and delete buttons?! %>
 
@@ -16,19 +16,18 @@
   <div class = "residents-collapsable">
     <% @residents.each do |resident| %>
       <%= link_to resident.name, resident_path(resident) %>
-      <p>Number of sets: <%= resident.radiosets.length %></p>
+      <p>Past sets: <%= resident.radiosets.where('date > ?', DateTime.now).each { |set| link_to set.title, } %> </p>
+      <p>Upcoming sets: <%= resident.radiosets.where('date < ?', DateTime.now).length%> </p>
     <% end %>
   </div>
-</div>
-
-
-
-<div class = "radiosets-callapsable">
-  <%= @radiosets %>
 </div>
 
 <div class = "posts-collapsable">
   <% @posts.each do |post| %>
     <%= link_to post.title, post_path(post) %>
   <% end %>
+</div>
+
+<div class = "radiosets-callapsable">
+  <%= @radiosets %>
 </div>
