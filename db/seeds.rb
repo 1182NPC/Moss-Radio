@@ -11,7 +11,6 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
             "https://www.youtube.com/embed/iXAbte4QXKs",
             "https://www.youtube.com/embed/Njk2YAgNMnE"]
 
-num = 0
 
 puts 'Cleaning up database...'
 Post.delete_all
@@ -30,6 +29,5 @@ end
 end
 
 somelinks.each do |link|
-  num += 1
-  Radioset.create(audio_link: link, resident_id: num)
+  Radioset.create(audio_link: link, resident_id: Resident.all.sample.id)
 end
