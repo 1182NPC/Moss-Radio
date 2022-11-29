@@ -7,6 +7,7 @@ class ResidentsController < ApplicationController
 
   def show
     set_resident
+    @radiosets = Radioset.where(resident: @resident)
   end
 
   def create

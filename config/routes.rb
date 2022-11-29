@@ -13,9 +13,10 @@ Rails.application.routes.draw do
 
 
   resources :residents do
-    resources :radiosets
+    resources :radiosets, only: [:new, :create]
   end
 
   resources :posts
+  resources :radiosets, only: [:index, :destroy]
 
 end
