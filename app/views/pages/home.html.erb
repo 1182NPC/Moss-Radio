@@ -1,6 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<%# THIS IS SOME CODE TO ADD TO THE NAVBAR LATER %>
+
+<%# CHAT--------------------------------------CHAT %>
 <div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>">
 
   <h1>#<%= @chatroom.name %></h1>
@@ -23,5 +26,20 @@
   <% end %>
 
   <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button>
+<%# CHAT--------------------------------------CHAT %>
+
+
+<%# Resident-----------------------------------index %>
+  <div>
+    <ul>
+      <% @residents.each do |resident| %>
+        <li><%= link_to resident.name, resident_path(resident) %></li>
+      <% end %>
+    </ul>
+  </div>
+<%# Resident-----------------------------------index %>
+
+  <%= link_to "See all radiosets", radiosets_path, class:"btn btn-info" %>
+  <%= link_to "See Blog", posts_path, class:"btn btn-info" %>
 
 </div>

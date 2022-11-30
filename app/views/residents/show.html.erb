@@ -1,3 +1,19 @@
+<img src="<%=@resident.photo%>" alt="Profile picture">
+<h2><%= @resident.name %></h2>
 <%= @resident.bio %>
+<br>
 <%= link_to "Edit this resident", edit_resident_path, class:"btn btn-secondary"%>
 <%= link_to "Delete this resident", resident_path(@resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger"%>
+
+<br>
+
+<% if @resident.radiosets.length >= 1 %>
+  <h3><%=@resident.name%>'s Sets: </h3>
+  <% @radiosets.each do |radioset| %>
+    <div>
+      <iframe width="560" height="315" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  <% end %>
+<% else %>
+<h3><%=@resident.name%> currently has no sets uploaded</h3>
+<% end %>

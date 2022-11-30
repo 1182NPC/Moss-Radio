@@ -1,12 +1,11 @@
 class RadiosetsController < ApplicationController
 
   def new
-    #TODO: MAKE ADMIN ONLY
     @radioset = Radioset.new
   end
 
   def index
-
+    @radiosets = Radioset.all
   end
 
   def show
@@ -33,6 +32,10 @@ class RadiosetsController < ApplicationController
     @radioset.resident = @resident
   end
 
+  def edit
+    set_radioset
+  end
+
   def update
     #TODO: MAKE ADMIN ONLY
     @radioset = set_radioset
@@ -41,7 +44,7 @@ class RadiosetsController < ApplicationController
 
   def destroy
     #TODO: MAKE ADMIN ONLY
-    
+
   end
 
   private

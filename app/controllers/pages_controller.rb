@@ -9,9 +9,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    redirect_to root_path if current_user.admin == false
+
     @residents = Resident.all
     @posts = Post.all
     @radiosets = Radioset.all
-  end
 
+  end
 end
