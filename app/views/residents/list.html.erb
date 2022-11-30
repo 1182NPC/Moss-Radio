@@ -1,7 +1,7 @@
 <div>
     <ul>
       <% residents.each do |resident| %>
-        <li><%= link_to resident.name, resident_path(resident) %></li>
+        <li><%= link_to resident.name, resident_path(resident), target:"_blank" %></li>
       <% end %>
     </ul>
   </div>

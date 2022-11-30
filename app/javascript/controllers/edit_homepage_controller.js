@@ -51,7 +51,7 @@ export default class extends Controller {
   }
 
   post(event) {
-    console.log("boss")
+    console.log(event.target)
   }
 
 
