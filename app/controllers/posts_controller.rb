@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.published
     respond_to do |format|
       format.html { render "posts/blog", locals: { posts: @posts } }
     end
@@ -38,7 +38,14 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path, status: :see_other
+    redirect_to dashboard_path
+  end
+
+  def publish
+    @post = Post.find(params[:post_id])
+    @post.toggle(:published)
+    @post.save
+    redirect_to edit_post_path(@post)
   end
 
   private

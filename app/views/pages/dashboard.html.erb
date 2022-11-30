@@ -24,7 +24,6 @@
           <div class="accordion-body">
             <% @residents.each do |resident| %>
 
-
               <div class="flex-for-buttons">
 
                 <div class="resident-buttons">
@@ -34,7 +33,7 @@
                       <%= link_to "Delete", resident_path(resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
                     </div>
                 </div>
-                
+
                       <div class="accordion" id="resident-sets-collapsable-<%=resident.id%>num">
                         <h2 class="accordion-header" id="heading<%=resident.id%>num">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=resident.id%>num" aria-expanded="false" aria-controls="collapse<%=resident.id%>num">
@@ -62,10 +61,35 @@
   </div>
 
 
-  <div class = "posts-collapsable">
-    <% @posts.each do |post| %>
-      <%= link_to post.title, post_path(post) %>
-    <% end %>
+  <div class="posts">
+    <div class="accordion" id="all-posts-collapsable">
+      <div class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          See all blogposts
+        </button>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#all-posts-collapsable">
+          <div class="accordion-body">
+            <ul>
+              <% @posts.each do |post| %>
+                <li>
+                  <div class="post-date-button">
+                    <div class="post-and-date">
+                      <%= link_to post.title, post_path(post) %>
+                      <p>Created at: <%= post.created_at %> </p>
+                      <p>Updated at: <%= post.updated_at %> </p>
+                    </div>
+                    <div class="edit-delete-buttons">
+                      <%= link_to "Edit", edit_post_path(post), class:"btn btn-secondary btn-sm"%>
+                      <%= link_to "Delete", post_path(post), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

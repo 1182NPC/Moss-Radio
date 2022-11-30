@@ -16,7 +16,8 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
             "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/34486647&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             "https://www.youtube.com/embed/7sFPYfm67yA",
             "https://www.youtube.com/embed/p5JM5r2J8r0",
-            "https://www.youtube.com/embed/KGwDl_0mAys"]
+            "https://www.youtube.com/embed/KGwDl_0mAys",
+            "https://www.youtube.com/watch?v=JK8ilaPZbKE&list=PLZUqUj66LOrF-KP4mhdmXszkKKvETyQap&index=3W"]
 
 puts 'Cleaning up database...'
 Post.destroy_all
@@ -31,10 +32,10 @@ puts 'Creating seeds...'
 end
 
 20.times do
-  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample)
+  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true)
 end
 
 
 somelinks.each do |link|
-  Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "Placeholder" )
+  Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "#{Faker::Games::WarhammerFantasy.hero} #{Faker::Music.genre}" )
 end

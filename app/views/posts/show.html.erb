@@ -8,11 +8,9 @@
     <h6><%= @post.content %></h6>
 
     <%# ADMIN %>
-    <%= link_to "Edit this post", edit_post_path, class:"btn btn-info"%>
-    <%= link_to 'Delete this post', post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"  %>
+    <%# link_to "Edit this post", edit_post_path, class:"btn btn-info"%>
+    <%# link_to 'Delete this post', post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"  %>
     <%# ADMIN %>
   </div>
-
+  <%= link_to "See all posts", posts_path, class:"btn btn-primary"%>
 </div>
-
-<%= link_to "See all posts", posts_path, class:"btn btn-primary"%>
