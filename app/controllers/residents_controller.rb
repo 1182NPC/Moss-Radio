@@ -35,12 +35,9 @@ class ResidentsController < ApplicationController
   def destroy
     #TODO: MAKE ADMIN ONLY
     set_resident
+    @resident.radiosets.destroy_all
     @resident.destroy
-    # redirect_to resident_path(@resident)
-  end
-
-  def dashboard
-
+    redirect_to dashboard_path
   end
 
   private
