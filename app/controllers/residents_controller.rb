@@ -5,6 +5,13 @@ class ResidentsController < ApplicationController
     @resident = Resident.new
   end
 
+  def index
+    @residents = Resident.all
+    respond_to do |format|
+      format.html { render "residents/list", locals: { residents: @residents } }
+    end
+  end
+
   def show
     set_resident
     @radiosets = Radioset.where(resident: @resident)

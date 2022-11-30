@@ -1,0 +1,12 @@
+<div class="container w-50" data-controller="edit_homepage">
+<% posts.each do |post| %>
+<div class="card my-4">
+  <h4><%= post.title %></h4>
+  <h6><%= post.author %></h6>
+  <h6>Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
+<%= link_to 'View post', post_path(post), class:"btn btn-dark"  %>
+<button data-action="click->edit-homepage#post">See Post</button></div>
+
+</div>
+<% end %>
+</div>

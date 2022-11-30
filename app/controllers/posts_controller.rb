@@ -2,6 +2,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.published
+    respond_to do |format|
+      format.html { render "posts/blog", locals: { posts: @posts } }
+    end
   end
 
   def new

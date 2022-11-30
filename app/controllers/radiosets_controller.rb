@@ -6,6 +6,9 @@ class RadiosetsController < ApplicationController
 
   def index
     @radiosets = Radioset.all
+    respond_to do |format|
+      format.html { render "radiosets/list", locals: { radiosets: @radiosets } }
+    end
   end
 
   def show

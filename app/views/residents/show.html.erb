@@ -2,6 +2,7 @@
 <h2><%= @resident.name %></h2>
 <%= @resident.bio %>
 
+
 <% if @resident.radiosets.length >= 1 %>
   <h3><%=@resident.name%>'s Sets: </h3>
   <% @radiosets.each do |radioset| %>
