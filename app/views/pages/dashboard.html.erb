@@ -5,40 +5,49 @@
   <%= link_to 'Create new resident', new_resident_path, class:"btn btn-primary"%>
   <%= link_to 'Create new set', new_radioset_path, class:"btn btn-primary"%>
 
-  <%# TODO: Each collapsable can be filtered by search - each collapsable item has a small edit and delete button %>
-
-  <%# TODO: Instead of no. of sets have past sets and upcoming sets - DONE%>
-
-  <%# TODO: Past-sets and upcoming-sets are links in of themselves - they produce a popup which shows a list of links to that resident's particular past or upcoming sets - these then also have edit and delete buttons?! %>
 
   <%# TODO: Actually make these three options into three collapsables %>
 
-  <div class = "residents-collapsable">
-    <% @residents.each do |resident| %>
-      <%= link_to resident.name, resident_path(resident) %>
-      <p>Past sets:</p>
-        <ul>
-          <% resident.radiosets.where('date > ?', DateTime.now).each do |set| %>
-            <li> <%=  link_to set.title, edit_radioset_path(set) %> </li>
-          <% end %>
-        </ul>
+  <%# TODO: The residents THEMSELVES are a collapsable %>
 
-      <p>Upcoming sets: </p>
-        <ul>
-          <% resident.radiosets.where('date > ?', DateTime.now).each do |set| %>
-            <li> <%=  link_to set.title, edit_radioset_path(set) %> </li>
-          <% end %>
-        </ul>
+  <div class = "residents">
+    <div class="accordion" id="all-residents-collapsable">
+      <div class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          See all residents
+        </button>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#all-residents-collapsable">
+          <div class="accordion-body">
+            <% @residents.each do |resident| %>
+              <%= link_to resident.name, resident_path(resident) %>
+                <div class="accordion" id="resident-sets-collapsable-<%=resident.id%>num">
+                  <h2 class="accordion-header" id="heading<%=resident.id%>num">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=resident.id%>num" aria-expanded="false" aria-controls="collapse<%=resident.id%>num">
+                      Past sets
+                    </button>
+                  </h2>
+                  <div id="collapse<%=resident.id%>num" class="accordion-collape collapse" aria-labelledby="heading<%=resident.id%>num" data-bs-parent="#resident-sets-collapsable-<%=resident.id%>num">
+                    <div class="accordion-body">
+                      <ul>
+                        <% resident.radiosets.each do |set| %>
+                          <li> <%= link_to set.title, edit_radioset_path(set) %> </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class = "posts-collapsable">
+    <% @posts.each do |post| %>
+      <%= link_to post.title, post_path(post) %>
     <% end %>
   </div>
-</div>
 
-<div class = "posts-collapsable">
-  <% @posts.each do |post| %>
-    <%= link_to post.title, post_path(post) %>
-  <% end %>
-</div>
-
-<div class = "radiosets-callapsable">
-  <%= @radiosets %>
 </div>
