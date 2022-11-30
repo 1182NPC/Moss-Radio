@@ -1,7 +1,18 @@
-<%= simple_form_for [@post] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :author %>
-  <%= f.input :content %>
-  <%= f.input :date_published, as: :date, html5: true %>
-  <%= f.submit class: "btn btn-success"%>
-<% end %>
+<div class="container">
+  <%= simple_form_for [@post] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :author %>
+    <%= f.input :content %>
+    <%= f.input :date_published, as: :date, html5: true %>
+    <div class="bottom-buttons" style="display:flex;justify-content:space-around">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to "Delete", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger"%>
+      <%= link_to "return to dashboard", "/dashboard", class:"btn btn-secondary"%>
+      <% if @post.published? %>
+        <%=link_to "Publish", post_publish_path(@post), class:"btn btn-success"%>
+      <% else %>
+        <%=link_to "Unpublish", post_publish_path(@post), class:"btn btn-warning"%>
+      <% end %>
+    </div>
+  <% end %>
+<div>

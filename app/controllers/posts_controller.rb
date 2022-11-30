@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.published
   end
 
   def new
@@ -36,6 +36,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path, status: :see_other
+  end
+
+  def publish
+    @post = Post.find(params[:post_id])
+    @post.toggle(:published)
+    @post.save
+    redirect_to edit_post_path(@post)
   end
 
   private

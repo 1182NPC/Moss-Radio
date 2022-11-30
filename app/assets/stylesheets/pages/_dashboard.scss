@@ -7,3 +7,17 @@
   display: flex;
   justify-content: space-between;
 }
+
+.post-date-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-and-date {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-bottom: 0;
+  }
+}

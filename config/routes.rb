@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
 
   resources :residents
-  resources :posts
+  resources :posts do
+    patch :publish
+  end
   resources :radiosets, only: [:new, :create, :edit, :index, :destroy]
 end
