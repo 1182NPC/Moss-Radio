@@ -1,17 +1,20 @@
-<div>
- <%= render "shared/media_player" %>
-</div>
+<div class = "page-wrapper">
+  <%= render "shared/navbar" %>
+  <h1>Pages#home</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
 
-<div>
- <%= render "shared/chat" %>
-</div>
+  <div>
+    <%= render "shared/media_player" %>
+  </div>
 
-<div>
- <%= render "shared/residents" %>
-</div>
+  <div>
+   <%= render "shared/chat" %>
+  </div>
 
+  <div>
+   <%= render "shared/residents" %>
+  </div>
 
   <%= link_to "See all radiosets", radiosets_path, class:"btn btn-info" %>
   <%= link_to "See Blog", posts_path, class:"btn btn-info" %>
-
 </div>
