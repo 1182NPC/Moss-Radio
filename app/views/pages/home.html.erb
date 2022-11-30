@@ -1,4 +1,4 @@
-<div class = "page-wrapper">
+<div class = "page-wrapper" data-controller="edit-homepage">
   <%= render "shared/navbar" %>
   <h1>Pages#home</h1>
   <p>Find me in app/views/pages/home.html.erb</p>
@@ -15,6 +15,11 @@
    <%= render "shared/residents" %>
   </div>
 
-  <%= link_to "See all radiosets", radiosets_path, class:"btn btn-info" %>
-  <%= link_to "See Blog", posts_path, class:"btn btn-info" %>
+  <div style="background-color: orange; width: 50%; height: 600px; margin: 0 auto; overflow-y:scroll;"> Central container with replaceable content
+    <div data-edit-homepage-target="central_container">
+    </div>
+  </div>
+
+  <button data-action="click->edit-homepage#blog">See Blog</button></div>
+  <button data-action="click->edit-homepage#radiosets">See Radiosets</button></div>
 </div>

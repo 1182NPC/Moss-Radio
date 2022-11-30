@@ -1,5 +1,5 @@
 <div class="container w-50">
-<% @posts.each do |post| %>
+<% posts.each do |post| %>
 <div class="card my-4">
   <h4><%= post.title %></h4>
   <h6><%= post.author %></h6>
@@ -8,5 +8,4 @@
 </div>
 <% end %>
 </div>
-<%= link_to 'Create new post', new_post_path, class:"btn btn-primary"  %>
-<%= link_to 'Home', root_path, class:"btn btn-primary"  %>
+
