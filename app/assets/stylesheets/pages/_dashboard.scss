@@ -13,6 +13,16 @@
   justify-content: space-between;
 }
 
+.edit-delete-buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .btn-secondary {
+    margin-right: 5px;
+  }
+}
+
 .post-and-date {
   display: flex;
   flex-direction: column;
