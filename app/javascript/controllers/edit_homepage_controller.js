@@ -37,5 +37,22 @@ export default class extends Controller {
 
   }
 
-  
+  residents(event) {
+    event.preventDefault()
+    const url = "http://localhost:3000/residents"
+    fetch(url, {
+      method: "GET",
+      headers: { "Accept": "text/html" }
+    })
+      .then(response => response.text())
+      .then((data) => {
+        this.central_containerTarget.innerHTML = data
+      })
+  }
+
+  post(event) {
+    console.log("boss")
+  }
+
+
 }

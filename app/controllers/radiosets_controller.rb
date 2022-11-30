@@ -2,13 +2,13 @@ class RadiosetsController < ApplicationController
 
   def new
     @radioset = Radioset.new
-    respond_to do |format|
-      format.html { render "radiosets/insert", locals: { radiosets: @radiosets } }
-    end
   end
 
   def index
     @radiosets = Radioset.all
+    respond_to do |format|
+      format.html { render "radiosets/insert", locals: { radiosets: @radiosets } }
+    end
   end
 
   def show
