@@ -24,7 +24,6 @@
           <div class="accordion-body">
             <% @residents.each do |resident| %>
 
-
               <div class="flex-for-buttons">
 
                 <div class="resident-buttons">
@@ -34,7 +33,7 @@
                       <%= link_to "Delete", resident_path(resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
                     </div>
                 </div>
-                
+
                       <div class="accordion" id="resident-sets-collapsable-<%=resident.id%>num">
                         <h2 class="accordion-header" id="heading<%=resident.id%>num">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=resident.id%>num" aria-expanded="false" aria-controls="collapse<%=resident.id%>num">
@@ -62,7 +61,7 @@
   </div>
 
 
-  <div class = "posts-collapsable">
+  <div class="posts-collapsable">
     <% @posts.each do |post| %>
       <%= link_to post.title, post_path(post) %>
     <% end %>
