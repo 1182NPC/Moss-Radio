@@ -1,13 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+ <%= render "shared/media_player" %>
+</div>
 
-<%# THIS IS SOME CODE TO ADD TO THE NAVBAR LATER %>
+<div>
+ <%= render "shared/chat" %>
+</div>
 
-
-<%= render "shared/chat" %>
-
-<%= render "shared/residents" %>
-
+<div>
+ <%= render "shared/residents" %>
+</div>
 
 
   <%= link_to "See all radiosets", radiosets_path, class:"btn btn-info" %>
