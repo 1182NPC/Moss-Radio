@@ -1,45 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class = "page-wrapper">
+  <%= render "shared/navbar" %>
+  <h1>Pages#home</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
 
-<%# THIS IS SOME CODE TO ADD TO THE NAVBAR LATER %>
-
-<%# CHAT--------------------------------------CHAT %>
-<div class="container chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>">
-
-  <h1>#<%= @chatroom.name %></h1>
-
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <%= render "shared/message", message: message %>
-    <% end %>
-  </div>
-
-    <%= simple_form_for [@chatroom, @message],
-      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-    %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
-
-  <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button>
-<%# CHAT--------------------------------------CHAT %>
-
-
-<%# Resident-----------------------------------index %>
   <div>
-    <ul>
-      <% @residents.each do |resident| %>
-        <li><%= link_to resident.name, resident_path(resident) %></li>
-      <% end %>
-    </ul>
+    <%= render "shared/media_player" %>
   </div>
-<%# Resident-----------------------------------index %>
+
+  <div>
+   <%= render "shared/chat" %>
+  </div>
+
+  <div>
+   <%= render "shared/residents" %>
+  </div>
 
   <%= link_to "See all radiosets", radiosets_path, class:"btn btn-info" %>
   <%= link_to "See Blog", posts_path, class:"btn btn-info" %>
-
 </div>
