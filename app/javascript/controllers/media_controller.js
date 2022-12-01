@@ -10,18 +10,19 @@ export default class extends Controller {
   }
 
   play() {
-    if (this.iconTarget.classList.contains("fa-play")) {
+    if (this.iconTarget.classList.contains("play")) {
     this.playerTarget.play()
-    this.iconTarget.classList.remove("fa-play")
+    this.iconTarget.classList.remove("play")
     this.iconTarget.classList.add("fa-pause")
     } else {
     this.playerTarget.pause()
     this.iconTarget.classList.remove("fa-pause")
-    this.iconTarget.classList.add("fa-play")
+    this.iconTarget.classList.add("play")
     }
   }
 
   volume() {
     this.playerTarget.volume = this.sliderTarget.value / 100
   }
+
 }

@@ -50,6 +50,7 @@ export default class extends Controller {
       })
   }
 
+
   post(event) {
     const value = event.target.dataset.value
     console.log(value)
