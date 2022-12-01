@@ -44,4 +44,6 @@ end
 somelinks.each do |link|
   Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "#{Faker::Games::WarhammerFantasy.hero} #{Faker::Music.genre}" )
 end
-p
+
+
+# https://api.unsplash.com/photos/random/?client_id=mNgjWTimcrM2nhflhnZn5GT-Wc_i-JmfjXewz33l_-4
