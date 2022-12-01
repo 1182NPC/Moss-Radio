@@ -3,5 +3,171 @@
   background-attachment: fixed;
   min-height: 100vh;
   background-size: cover;
+}
+body{
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Side navbar */
+
+.nav{
+  position: absolute;
+  width: 64px;
+  height: 666px;
+  top: 175px;
+  }
+  #navtop a {
+    position: absolute;
+    width: 100px;
+    left: -50px;
+    transition: 0.5s;
+    top: 0%;
+    bottom: 66.67%;
+  }
+  #navmiddle a {
+    position: absolute;
+    width: 100px;
+    left: -50px;
+    transition: 0.5s;
+    top: 33.33%;
+    bottom: 33.33%;
+    }
+  #navbottom a {
+    position: absolute;
+    width: 100px;
+    left: -50px;
+    transition: 0.5s;
+    top: 66.67%;
+    bottom: 0%;
+  }
+  #navtop a:hover,#navmiddle a:hover,#navbottom a:hover {
+    left: -10px;
+  }
+
+  /* Chatbox */
+
+#chat {
+  position: absolute;
+  top: 200px;
+  right: -320px;
+  transition: 0.5s;
+  bottom: 0%;
+
+}
+#chat.active {
+  right: 0px;
+}
+
+.btn-r img{
+  position: absolute;
+  top: 80px;
+  left: 12px;
+  cursor:grab;
+  /* width: 26px;
+  top: 265px;
+   */
+}
+
+
+/* About */
+
+#about span {
+  position: absolute;
+  left: 600px;
+  bottom: -240px;
+  transition: 0.5s;
+  justify-content: center;
+
+}
+#about span:hover {
+  bottom: -10px;
+}
+
+
+/* Top navbar */
+
+.bar{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  z-index: 900;
+  left: 0;
+  width: 100%;
+  padding: 16px ;
+
+}
+.inside{
+  display: flex;
+  border-radius: 25px;
+  border: 2px solid #000000;
+  padding: 8px;
+  overflow: hidden;
+  text-overflow: clip;
+  /* justify-content: center; */
+  /* margin-left: 80px; */
+}
+#play{
+  width: 30px;
+  height: auto;
+}
+#logo{
+  width: 80px;
+  height: 100%;
+}
+/* input[type="range"] {
+  -webkit-appearance: none;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.6);
+  background-image: linear-gradient(#ff4500, #ff4500);
+} */
+#myVideo {
+  position: fixed;
+  background-size: cover;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.bar h1{
+  font-family:'Inter';
+  font-size:medium;
   position: relative;
+  margin-bottom: 0;
+ }
+
+.box{
+  width: 50%;
+  gap: 100px
+}
+
+.box-big{
+  display: flex;
+  border-bottom: 2px solid;
+  // background-color: white;
+
+}
+.media{
+  display: flex;
+  gap: 28px;
+}
+
+#points{
+display: none;
+}
+
+#points.disp{
+display: flex;
+}
+
+#vol{
+  width: 20px;
+  height: auto;
 }

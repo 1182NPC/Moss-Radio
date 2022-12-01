@@ -6,11 +6,7 @@
     <h6><%= @post.author %></h6>
     <h6>Published: <%= @post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
     <h6><%= @post.content %></h6>
+    <button data-action="click->edit-homepage#blog">Back to blog</button>
 
-    <%# ADMIN %>
-    <%# link_to "Edit this post", edit_post_path, class:"btn btn-info"%>
-    <%# link_to 'Delete this post', post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"  %>
-    <%# ADMIN %>
   </div>
-  <%= link_to "See all posts", posts_path, class:"btn btn-primary"%>
 </div>
