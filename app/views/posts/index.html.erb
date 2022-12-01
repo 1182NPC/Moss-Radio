@@ -1,16 +1,10 @@
-<div class="container w-50">
+<div class="container w-50" data-controller="edit_homepage">
   <% @posts.each do |post| %>
-  <div class="card my-4">
-    <h4><%= post.title %></h4>
-    <h6><%= post.author %></h6>
-    <h6>Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
-  <%= link_to 'View post', post_path(post), class:"btn btn-dark"  %>
-  </div>
+    <div class="card my-4">
+      <h4><%= post.title %></h4>
+      <h6><%= post.author %></h6>
+      <h6>Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
+    <button data-action="click->edit-homepage#post" data-value="<%=post.id%>">View Post</button>
+    </div>
   <% end %>
 </div>
-
-<% end %>
-</div>
-<%=# link_to 'Create new post', new_post_path, class:"btn btn-primary"  %>
-<%=# link_to 'Home', root_path, class:"btn btn-primary"  %>
-

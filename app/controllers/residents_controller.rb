@@ -7,9 +7,6 @@ class ResidentsController < ApplicationController
 
   def index
     @residents = Resident.all
-    respond_to do |format|
-      format.html { render "residents/list", locals: { residents: @residents } }
-    end
   end
 
   def show
