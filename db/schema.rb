@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_141230) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_150001) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_141230) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "postlikes", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_postlikes_on_post_id"
+    t.index ["user_id"], name: "index_postlikes_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -40,6 +49,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_141230) do
     t.datetime "updated_at", null: false
     t.boolean "published", default: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "radiosetlikes", force: :cascade do |t|
+    t.bigint "radioset_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["radioset_id"], name: "index_radiosetlikes_on_radioset_id"
+    t.index ["user_id"], name: "index_radiosetlikes_on_user_id"
   end
 
   create_table "radiosets", force: :cascade do |t|
@@ -77,6 +95,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_141230) do
 
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "postlikes", "posts"
+  add_foreign_key "postlikes", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "radiosetlikes", "radiosets"
+  add_foreign_key "radiosetlikes", "users"
   add_foreign_key "radiosets", "residents"
 end

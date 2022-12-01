@@ -50,6 +50,7 @@ export default class extends Controller {
       })
   }
 
+
   post(event) {
     const value = event.target.dataset.value
     console.log(value)
@@ -76,6 +77,17 @@ export default class extends Controller {
       .then((data) => {
         this.central_containerTarget.innerHTML = data
       })
+  }
+
+  likepost(event) {
+    const value = event.target.dataset.value
+    console.log(value)
+    const postlikeurl = `http://localhost:3000/posts/${value}/postlikes`
+    fetch(postlikeurl, {
+      method: "POST",
+      headers: { "Accept": "text/html" }
+    })
+    this.post(event)
   }
 
    show() {

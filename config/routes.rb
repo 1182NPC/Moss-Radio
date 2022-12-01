@@ -11,10 +11,16 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
+  
 
   resources :residents
   resources :posts do
+    resources :postlikes
     patch :publish
   end
-  resources :radiosets, only: [:new, :create, :edit, :index, :destroy]
+
+  resources :radiosets, only: [:new, :create, :edit, :index, :destroy] do
+    resources :postlikes
+  end
+  
 end
