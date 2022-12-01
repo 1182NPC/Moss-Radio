@@ -1,12 +1,5 @@
 // Specific CSS for your home-page
 
-p {
-  color: black;
-}
-h {
-  color: black;
-}
-
 // Scroll bar
 /* width */
 ::-webkit-scrollbar {
@@ -20,10 +13,12 @@ h {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #8e888c42;
+
+  border: 1px solid white;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background-color: #8e888c33;
+  transform: 2;
 }
