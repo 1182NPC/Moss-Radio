@@ -1,9 +1,8 @@
-<% @radiosets.each do |radioset| %>
-  <div>
-    <h4><%=radioset.resident.name%></h4>
-    <button data-action="click->edit-homepage#resident" data-value="<%=radioset.resident.id%>">View Profile</button>
-    <iframe width="560" height="315" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    
-  </div>
-<% end %>
+  <% @radiosets.each do |radioset| %>
+    <div class = "profile-index">
+      <h4><%=radioset.resident.name%></h4>
+      <button id ="radio-sets" data-action="click->edit-homepage#resident" data-value="<%=radioset.resident.id%>">View Profile</button>
+      <iframe width="560" height="315" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  <% end %>
