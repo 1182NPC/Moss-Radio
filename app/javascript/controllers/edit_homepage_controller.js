@@ -50,6 +50,7 @@ export default class extends Controller {
       })
   }
 
+
   post(event) {
     console.log(event.target)
   }
@@ -57,6 +58,8 @@ export default class extends Controller {
    show() {
     this.chatTarget.classList.toggle('active');
   }
+
+
 
   //  volume() {
   //   document.getElementById('vol').classList.toggle('disp')
