@@ -1,7 +1,11 @@
-.page-wrapper {
-  background-image: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669799937/Homepage_lop1pq.png);
-  background-attachment: fixed;
-  min-height: 100vh;
+/* Basic structure */
+
+html, body{
+  background: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669799937/Homepage_lop1pq.png) no-repeat center center fixed;
+  ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 body{
@@ -56,7 +60,7 @@ body{
 #chat {
   position: absolute;
   top: 200px;
-  right: -320px;
+  right: -360px;
   transition: 0.5s;
   bottom: 0%;
 
@@ -68,7 +72,7 @@ body{
 .btn-r img{
   position: absolute;
   top: 80px;
-  left: 12px;
+  left: 22px;
   cursor:grab;
   /* width: 26px;
   top: 265px;
@@ -106,7 +110,7 @@ body{
 .inside{
   display: flex;
   border-radius: 25px;
-  border: 2px solid #000000;
+  border: 2px solid #ffffff;
   padding: 8px;
   overflow: hidden;
   text-overflow: clip;
@@ -114,7 +118,7 @@ body{
   /* margin-left: 80px; */
 }
 #play{
-  width: 30px;
+  width: 34px;
   height: auto;
   cursor:grab;
 }
@@ -139,6 +143,7 @@ body{
 
 .bar h1{
   font-family:'Inter';
+  color: white;
   font-size:medium;
   position: relative;
   margin-bottom: 0;
@@ -191,10 +196,12 @@ body{
 
 .box-big{
   display: flex;
-  border-bottom: 2px solid;
   justify-content: space-between;
   flex-direction: row-reverse;
+  border-bottom: 2px solid white;
+
   // background-color: white;
+  
   .admin-rocker {
     padding-right: 10px;
     display: flex;
