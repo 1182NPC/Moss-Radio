@@ -6,5 +6,7 @@
     <h6><%= @post.author %></h6>
     <h6>Published: <%= @post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
     <h6><%= @post.content %></h6>
+    <button data-action="click->edit-homepage#blog">Back to blog</button>
+
   </div>
 </div>
