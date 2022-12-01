@@ -37,7 +37,7 @@ export default class extends Controller {
 
   }
 
-  residents(event) {
+  residentlist(event) {
     event.preventDefault()
     const url = "http://localhost:3000/residents"
     fetch(url, {
@@ -52,7 +52,42 @@ export default class extends Controller {
 
 
   post(event) {
-    console.log(event.target)
+    const value = event.target.dataset.value
+    console.log(value)
+    const url = `http://localhost:3000/posts/${value}`
+    fetch(url, {
+      method: "GET",
+      headers: { "Accept": "text/html" }
+    })
+      .then(response => response.text())
+      .then((data) => {
+        this.central_containerTarget.innerHTML = data
+      })
+  }
+
+  resident(event) {
+    const value = event.target.dataset.value
+    console.log(value)
+    const url = `http://localhost:3000/residents/${value}`
+    fetch(url, {
+      method: "GET",
+      headers: { "Accept": "text/html" }
+    })
+      .then(response => response.text())
+      .then((data) => {
+        this.central_containerTarget.innerHTML = data
+      })
+  }
+
+  likepost(event) {
+    const value = event.target.dataset.value
+    console.log(value)
+    const postlikeurl = `http://localhost:3000/posts/${value}/postlikes`
+    fetch(postlikeurl, {
+      method: "POST",
+      headers: { "Accept": "text/html" }
+    })
+    this.post(event)
   }
 
    show() {
