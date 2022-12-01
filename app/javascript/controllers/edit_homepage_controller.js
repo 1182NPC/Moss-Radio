@@ -78,6 +78,17 @@ export default class extends Controller {
       })
   }
 
+  likepost(event) {
+    const value = event.target.dataset.value
+    console.log(value)
+    const postlikeurl = `http://localhost:3000/posts/${value}/postlikes`
+    fetch(postlikeurl, {
+      method: "POST",
+      headers: { "Accept": "text/html" }
+    })
+    this.post(event)
+  }
+
    show() {
     this.chatTarget.classList.toggle('active');
   }
