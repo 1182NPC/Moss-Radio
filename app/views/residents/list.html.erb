@@ -1,7 +1,9 @@
-<div>
-    <ul>
-      <% residents.each do |resident| %>
-        <li><%= link_to resident.name, resident_path(resident), target:"_blank" %></li>
-      <% end %>
-    </ul>
+  <div class = "resident_view">
+    <div class ="text-wrapper">
+      <ul>
+        <% residents.each do |resident| %>
+          <li><%= link_to resident.name, resident_path(resident), target:"_blank" %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>

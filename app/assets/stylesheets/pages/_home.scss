@@ -1,1 +1,29 @@
 // Specific CSS for your home-page
+
+p {
+  color: black;
+}
+h {
+  color: black;
+}
+
+// Scroll bar
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8e888c42;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
