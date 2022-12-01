@@ -1,7 +1,7 @@
 <div>
     <ul>
-      <% residents.each do |resident| %>
-        <li><%= link_to resident.name, resident_path(resident) %></li>
+      <% @residents.each do |resident| %>
+        <li><button data-action="click->edit-homepage#resident" data-value="<%=resident.id%>"><%=resident.name%></button></li>
       <% end %>
     </ul>
 </div>
