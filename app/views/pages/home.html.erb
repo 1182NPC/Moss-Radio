@@ -4,29 +4,27 @@
 
   <%# render "shared/navbar" %>
 
-
-
   <div class="nav">
 
     <div id="navtop" class="topnav">
-      <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884038/Tab_7_vj7hea.png" alt="" data-action="click->edit-homepage#residents"></a></div>
+      <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669905575/Tab_13_hndstq.png" alt="" data-action="click->edit-homepage#radiosets"></a></div>
 
     <div id="navmiddle">
-      <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884038/Tab_8_uw8wjg.png" alt="" data-action="click->edit-homepage#radiosets" ></a></div>
+      <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669905575/Tab_14_eskqz3.png" alt="" data-action="click->edit-homepage#residents"  ></a></div>
 
     <div id="navbottom">
-      <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884038/Tab_8_uw8wjg.png" alt="" data-action="click->edit-homepage#blog"></a></div>
+      <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669905575/Tab_15_ueovck.png" alt="" data-action="click->edit-homepage#blog"></a></div>
 
   </div>
 
 
   <div id="chat" data-edit-homepage-target="chat">
-      <span href="#" class="btn-r" data-action="click->edit-homepage#show" data-action="click->edit-homepage#show"  ><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884312/Component_4_aqyqqt.png" alt=""></span>
-      <span href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884062/Component_5_s2zk7t.png" alt=""  ></span>
+      <span href="#" class="btn-r" data-action="click->edit-homepage#show" ><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669907796/Component_4_3_tkpa0h.png" alt=""></span>
+      <span href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669906417/Component_11_snnzvr.png" alt=""  ></span>
   </div>
 
   <div id="about">
-      <span href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884064/Component_6_ypeouk.png" alt=""></span>
+      <span href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669908412/Component_10_1_ql2ws7.png" alt=""></span>
   </div>
 
   <div class="box-big">
@@ -34,10 +32,8 @@
       <div class="bar">
         <div class = "media">
             <%= render "shared/media_player" %>
-
-          <%# <img id="play" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884084/play_awwq9u.svg" alt=""> %>
           <div class="inside"><h1>Streaming Live: DJ KEV N PERRY || <%= Time.now.strftime("%I:%M") %></h1></div>
-          <img id ="vol" onclick="volume()" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884091/download_zu72f7.svg" alt="">
+          <img id ="vol" onclick="volume()" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669907255/icons8-voice-24_zpfzfp.png" alt="">
           <input type="range" id="points" name="points" min="0" max="10">
           </div>
           <img id="logo" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884107/MOSS_3_uu5rj0.png" alt="">
@@ -47,16 +43,8 @@
 
 
 
-
-
-  <div style="background-color: orange; width: 50%; height: 600px; margin: 0 auto; overflow-y:scroll;">
+  <div style="background-color: transparent; width: 50%; height: 600px; margin: 0 auto; overflow-y:scroll;">
     <div data-edit-homepage-target="central_container">
     </div>
   </div>
-<%# <br> %>
-<%# <div>
-  <button data-action="click->edit-homepage#residents">See Residents</button></div>
-  <button data-action="click->edit-homepage#radiosets">See Radiosets</button></div>
-  <button data-action="click->edit-homepage#blog">See Blog</button></div>
-</div> %>
 </div>
