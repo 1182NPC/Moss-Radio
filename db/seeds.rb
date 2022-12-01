@@ -24,8 +24,13 @@ Post.destroy_all
 Radioset.destroy_all
 Resident.destroy_all
 Message.destroy_all
+Chatroom.destroy_all
 
 puts 'Creating seeds...'
+
+User.create(email: "test@test.org", password: "123456", nickname: "nick", admin: true)
+
+Chatroom.create(name: "dashboard")
 
 20.times do
   Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
@@ -39,3 +44,4 @@ end
 somelinks.each do |link|
   Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "#{Faker::Games::WarhammerFantasy.hero} #{Faker::Music.genre}" )
 end
+p
