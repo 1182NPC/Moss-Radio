@@ -1,18 +1,35 @@
+  <div class="box-big" style="border-bottom: none;">
+    <div class="admin-rocker">
+      <%= link_to root_path do %>
+      <div class="mid">
+        <label class="rocker">
+          <input type="checkbox" checked>
+          <span class="switch-left">Admin</span>
+          <span class="switch-right">Home</span>
+        </label>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
 <div class = "container">
+
   <h1>Welcome to the admin dashboard</h1>
 
-  <%= link_to 'Create new post', new_post_path, class:"btn btn-primary"%>
-  <%= link_to 'Create new resident', new_resident_path, class:"btn btn-primary"%>
-  <%= link_to 'Create new set', new_radioset_path, class:"btn btn-primary"%>
+  <div class="create-buttons">
+    <%= link_to 'Create new post', new_post_path, class:"btn btn-primary"%>
+    <%= link_to 'Create new resident', new_resident_path, class:"btn btn-primary"%>
+    <%= link_to 'Create new set', new_radioset_path, class:"btn btn-primary"%>
+  </div>
 
 
   <%# TODO: Actually make these three options into three collapsables DONE %>
 
   <%# TODO: The residents THEMSELVES are a collapsable DONE %>
 
-  <%# TODO: Edit and delete buttons next to each resident and set %>
+  <%# TODO: Edit and delete buttons next to each resident and set DONE %>
 
-  <%# Possible TODO: Save a blogpost to edit later? only appears when it is publised? %>
+  <%# Possible TODO: Save a blogpost to edit later? only appears when it is publised? DONE%>
 
   <div class = "residents">
     <div class="accordion" id="all-residents-collapsable">
@@ -28,19 +45,15 @@
 
                 <div class="resident-buttons">
                     <%= link_to resident.name, resident_path(resident) %>
-                    <div class="edit-delete-buttons">
-                      <%= link_to "Edit", edit_resident_path(resident), class:"btn btn-secondary btn-sm"%>
-                      <%= link_to "Delete", resident_path(resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
-                    </div>
-                </div>
 
-                      <div class="accordion" id="resident-sets-collapsable-<%=resident.id%>num">
+                    <% unless resident.radiosets.first.nil? %>
+                      <div class="accordion" id="resident-sets-collapsable">
                         <h2 class="accordion-header" id="heading<%=resident.id%>num">
                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=resident.id%>num" aria-expanded="false" aria-controls="collapse<%=resident.id%>num">
                             Past sets
                           </button>
                         </h2>
-                        <div id="collapse<%=resident.id%>num" class="accordion-collape collapse" aria-labelledby="heading<%=resident.id%>num" data-bs-parent="#resident-sets-collapsable-<%=resident.id%>num">
+                        <div id="collapse<%=resident.id%>num" class="accordion-collape collapse" aria-labelledby="heading<%=resident.id%>num" data-bs-parent="#resident-sets-collapsable">
                           <div class="accordion-body">
                             <ul>
                               <% resident.radiosets.each do |set| %>
@@ -50,6 +63,13 @@
                           </div>
                         </div>
                       </div>
+                    <% end %>
+
+                </div>
+                <div class="edit-delete-buttons">
+                  <%= link_to "Edit", edit_resident_path(resident), class:"btn btn-secondary btn-sm"%>
+                  <%= link_to "Delete", resident_path(resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
+                </div>
 
               </div>
 

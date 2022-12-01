@@ -196,8 +196,17 @@ body{
 
 .box-big{
   display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
   border-bottom: 2px solid white;
+
   // background-color: white;
+  
+  .admin-rocker {
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
 
 }
 .media{
