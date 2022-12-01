@@ -29,8 +29,11 @@
 .resident-buttons {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   flex-grow: 4;
+
+  a {
+    min-height: 31px;
+  }
 }
 
 .post-date-button {
