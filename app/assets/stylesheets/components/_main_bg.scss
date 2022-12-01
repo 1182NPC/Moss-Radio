@@ -110,12 +110,13 @@ body{
   padding: 8px;
   overflow: hidden;
   text-overflow: clip;
-  /* justify-content: center; */
+  
   /* margin-left: 80px; */
 }
 #play{
   width: 30px;
   height: auto;
+  cursor:grab;
 }
 #logo{
   width: 80px;
@@ -141,11 +142,51 @@ body{
   font-size:medium;
   position: relative;
   margin-bottom: 0;
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
  }
 
 .box{
   width: 50%;
   gap: 100px
+}
+
+#volume{
+  display: none;
+}
+
+#volume.active{
+  display:block;
 }
 
 .box-big{
