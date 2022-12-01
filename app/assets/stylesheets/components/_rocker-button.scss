@@ -12,7 +12,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top:1em;
 }
 
 
@@ -28,12 +27,12 @@ html {
   will change the size of the switch.
   See .rocker-small below as example.
   */
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   color: #888;
-  width: 7em;
+  width: 8em;
   height: 4em;
   overflow: hidden;
   border-bottom: 0.5em solid #eee;
@@ -70,13 +69,13 @@ html {
   align-items: center;
   justify-content: center;
   height: 2.5em;
-  width: 3em;
+  width: 3.5em;
   transition: 0.2s;
 }
 
 .switch-left {
   height: 2.4em;
-  width: 2.75em;
+  width: 3.2em;
   left: 0.85em;
   bottom: 0.4em;
   background-color: #ddd;
@@ -117,7 +116,7 @@ input:checked + .switch-left {
   bottom: 0px;
   left: 0.5em;
   height: 2.5em;
-  width: 3em;
+  width: 3.5em;
   transform: rotate(0deg) skewX(0deg);
 }
 
@@ -132,7 +131,7 @@ input:checked + .switch-left + .switch-right {
   bottom: 0.4em;
   right: 0.8em;
   height: 2.4em;
-  width: 2.75em;
+  width: 3.22em;
   transform: rotate(-15deg) skewX(-15deg);
 }
 

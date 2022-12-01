@@ -60,6 +60,13 @@
   }
 }
 
+.box-big {
+  flex-direction: row-reverse;
+
+  admin-rocker {
+    padding-right: 10px;
+  }
+}
 .post-and-date {
   display: flex;
   flex-direction: column;

@@ -30,6 +30,17 @@
   </div>
 
   <div class="box-big">
+    <div class="admin-rocker">
+    <%= if current_user.admin? link_to dashboard_path do %>
+      <div class="mid">
+        <label class="rocker">
+          <input type="checkbox" unchecked>
+          <span class="switch-left">Admin</span>
+          <span class="switch-right">Pleb</span>
+        </label>
+      </div>
+      <% end %>
+    </div>
     <div class="box">
       <div class="bar">
         <div class = "media">

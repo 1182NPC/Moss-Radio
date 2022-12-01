@@ -110,7 +110,7 @@ body{
   padding: 8px;
   overflow: hidden;
   text-overflow: clip;
-  
+
   /* margin-left: 80px; */
 }
 #play{
@@ -192,7 +192,14 @@ body{
 .box-big{
   display: flex;
   border-bottom: 2px solid;
+  justify-content: space-between;
+  flex-direction: row-reverse;
   // background-color: white;
+  .admin-rocker {
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
 
 }
 .media{
