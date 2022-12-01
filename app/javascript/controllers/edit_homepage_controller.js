@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="edit-homepage"
 export default class extends Controller {
-  static targets = ["central_container"]
+  static targets = ["central_container", "chat"]
 
   connect() {
     console.log("controller is here!")
@@ -54,5 +54,12 @@ export default class extends Controller {
     console.log("boss")
   }
 
+   show() {
+    this.chatTarget.classList.toggle('active');
+  }
+
+  //  volume() {
+  //   document.getElementById('vol').classList.toggle('disp')
+  // }
 
 }

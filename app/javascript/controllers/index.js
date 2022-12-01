@@ -15,3 +15,4 @@ application.register("hello", HelloController)
 
 import MediaController from "./media_controller"
 application.register("media", MediaController)
+
