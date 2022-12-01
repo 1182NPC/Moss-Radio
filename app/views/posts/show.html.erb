@@ -6,6 +6,11 @@
     <h6><%= @post.author %></h6>
     <h6>Published: <%= @post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
     <h6><%= @post.content %></h6>
+
+    <button data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
+
+    <p> <i class="fa-solid fa-heart"></i> <%= @post.postlikes.count %> <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%></p>
+
     <button data-action="click->edit-homepage#blog">Back to blog</button>
 
   </div>
