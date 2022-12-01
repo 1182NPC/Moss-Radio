@@ -1,6 +1,7 @@
 .page-wrapper {
   background-image: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669799937/Homepage_lop1pq.png);
+  background-attachment: fixed;
+  min-height: 100vh;
   background-size: cover;
   position: relative;
-  height: 100vh;
 }
