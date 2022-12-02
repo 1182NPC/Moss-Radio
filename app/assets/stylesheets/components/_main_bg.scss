@@ -1,3 +1,11 @@
+.page-wrapper {
+//   background-image: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669799937/Homepage_lop1pq.png);
+//   background-size: cover;
+//   position: relative;
+  height: 100%;
+}
+
+
 /* Basic structure */
 
 html, body{
@@ -7,8 +15,10 @@ html, body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
 }
 body{
+  margin: 0;
   height: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -17,6 +27,12 @@ body{
 * {
   padding: 0;
   margin: 0;
+}
+
+.bottom-page{
+  display: flex;
+  height: 92%;
+
 }
 
 /* Side navbar */
@@ -66,7 +82,7 @@ body{
 
 }
 #chat.active {
-  right: 0px;
+  right: -20px;
 }
 
 .btn-r img{
@@ -83,11 +99,13 @@ body{
 /* About */
 
 #about span {
+  display: flex;
   position: absolute;
   left: 600px;
   bottom: -240px;
   transition: 0.5s;
   justify-content: center;
+  align-self: center;
 
 }
 #about span:hover {
@@ -111,20 +129,24 @@ body{
   display: flex;
   border-radius: 25px;
   border: 2px solid #ffffff;
-  padding: 8px;
+  padding: 6px;
   overflow: hidden;
-  text-overflow: clip;
-
+  // text-overflow: clip;
+  width: 181px;
+  height: 36px;
   /* margin-left: 80px; */
 }
-#play{
+
+#play i{
   width: 34px;
   height: auto;
   cursor:grab;
 }
 #logo{
+  align-self: flex-end;
   width: 80px;
   height: 100%;
+  margin-bottom: 11px;
 }
 /* input[type="range"] {
   -webkit-appearance: none;
@@ -142,6 +164,7 @@ body{
 }
 
 .bar h1{
+  white-space: nowrap;
   font-family:'Inter';
   color: white;
   font-size:medium;
@@ -181,8 +204,8 @@ body{
   }
  }
 
-.box{
-  width: 50%;
+.nav-left{
+  width: 40%;
   gap: 100px
 }
 
@@ -194,19 +217,11 @@ body{
   display:block;
 }
 
-.box-big{
+.topnavbar{
   display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
   border-bottom: 2px solid white;
-
+  justify-content: space-between;
   // background-color: white;
-  
-  .admin-rocker {
-    padding-right: 10px;
-    display: flex;
-    align-items: flex-start;
-  }
 
 }
 .media{
@@ -225,4 +240,17 @@ display: flex;
 #vol{
   width: 20px;
   height: auto;
+}
+
+.fa-play{
+  padding-top: 5px
+}
+.fa-solid{
+  height: auto;
+  cursor:grab;
+  color: white;
+  display: inline;
+}
+.nav-right{
+  width: 40%;
 }
