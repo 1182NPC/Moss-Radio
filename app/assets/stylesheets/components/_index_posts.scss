@@ -1,0 +1,31 @@
+.w-50 {
+  width: 100% !important;
+}
+
+.blog-wrapper {
+  display: flex;
+  margin-bottom: 40px;
+  background: transparent;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid white;
+
+}
+
+h2, h4, h5, h6 {
+  color: white;
+  text-shadow: 0px 2px 2px #8E888C;
+}
+
+// blogs buttons
+
+#blogs {
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  color: white;
+  text-shadow: 0px 2px 2px #8E888C;
+  margin: 10px;
+  text-align: center;
+}

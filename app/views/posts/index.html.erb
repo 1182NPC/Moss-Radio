@@ -1,10 +1,14 @@
 <div class="container w-50" data-controller="edit_homepage">
-  <% @posts.each do |post| %>
-    <div class="card my-4">
-      <h4><%= post.title %></h4>
-      <h6><%= post.author %></h6>
-      <h6>Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
-    <button data-action="click->edit-homepage#post" data-value="<%=post.id%>">View Post</button>
-    </div>
-  <% end %>
+  <div class = "blog-index">
+    <% @posts.each do |post| %>
+      <div class="blog-wrapper">
+        <div style ="width: 60%;">
+          <h2><%= post.title %></h2>
+          <h4><%= post.author %></h4>
+          <h5>Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h5>
+        </div>
+          <div style = "width: 50%; text-align: right;"><button id ="blogs" data-action="click->edit-homepage#post" data-value="<%=post.id%>">View Post</button></div>
+      </div>
+    <% end %>
+  </div>
 </div>
