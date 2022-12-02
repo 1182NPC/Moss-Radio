@@ -1,18 +1,35 @@
-h4 {
+h3 {
   color: white;
   text-shadow: 0px 2px 2px #8E888C;
 }
 
 .profile-index {
-  justify-content: center;
+  box-shadow: 2px 1px 2px 2px #8e888c68;
+  margin: 10px;
+  padding: 10px;
 }
+
+.name-span {
+  display: flex;
+}
+
+.audio-link {
+position: relative;
+}
+
+iframe {
+  width: 100%;
+  background-image: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669895410/Rectangle_41_xf05vo.png);
+  background-image: cover;
+  padding: 5px;
+}
+// radio sets index button
 
 #radio-sets {
   background: transparent;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
-  text-shadow: 0px 2px 2px #8E888C;
-  margin: 10px;
+  text-shadow: 2px 2px 2px #8E888C;
   text-align: center;
 }
