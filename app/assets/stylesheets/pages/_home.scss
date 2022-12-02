@@ -40,7 +40,7 @@
     height: 300px;
   }
   iframe{
-    width: 200px;
+    width: 100%;
     height: 130px;
   }
 }
@@ -51,7 +51,7 @@
     height: 400px;
   }
   iframe{
-    width: 300px;
+    width: 100%;
     height: 200px;
   }
 }
@@ -62,7 +62,42 @@
     height: 500px;
   }
   iframe{
-    width: 560px;
+    width: 100%;
+    height: 315px;
+  }
+}
+
+// Height media queries
+
+// /* Small devices (portrait tablets and large phones, 400px and down) */
+@media only screen and (min-height: 200px) {
+  #central_container{
+    height: 300px;
+  }
+  iframe{
+    width: 100%;
+    height: 130px;
+  }
+}
+
+// /* Medium devices (landscape tablets, 600px and up) */
+@media only screen and (min-height: 600px) {
+  #central_container{
+    height: 400px;
+  }
+  iframe{
+    width: 100%;
+    height: 200px;
+  }
+}
+
+// /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-height: 800px) {
+  #central_container{
+    height: 500px;
+  }
+  iframe{
+    width: 100%;
     height: 315px;
   }
 }
