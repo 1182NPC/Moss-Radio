@@ -80,6 +80,8 @@ body{
   transition: 0.5s;
   bottom: 0%;
 
+
+
 }
 #chat.active {
   right: -20px;
@@ -90,8 +92,7 @@ body{
   height: 100%;
   margin-left: 75px;
   position: absolute;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y:scroll;
   background-color: transparent;
   padding: 20px;
 
