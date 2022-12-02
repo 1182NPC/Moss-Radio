@@ -37,7 +37,7 @@ Chatroom.create(name: "dashboard")
 end
 
 20.times do
-  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true)
+  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true, postlikes: (1..100).to_a.sample)
 end
 
 

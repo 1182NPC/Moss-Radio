@@ -31,7 +31,7 @@
 
   <div class="box-big">
     <div class="admin-rocker">
-      <% if current_user.admin = true %>
+      <% if current_user.admin? %>
         <%= link_to dashboard_path do %>
           <div class="mid">
             <label class="rocker">
