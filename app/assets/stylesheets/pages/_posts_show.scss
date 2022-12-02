@@ -1,5 +1,5 @@
 #blog-view {
-  background-color: rgba(255, 255, 255, 0.50);
+  background-color: rgba(211, 211, 211, 0.529);
 
   .header-bar {
     text-align: left;
@@ -11,5 +11,21 @@
   .blog-content {
     margin-left: 30px;
     margin-right: 10px;
+  }
+
+}
+
+#lower-blog{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+
+  .lower-icons{
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  color: white;
+  text-shadow: 2px 2px 2px #8E888C;
+  text-align: center;
   }
 }

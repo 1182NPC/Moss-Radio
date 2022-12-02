@@ -1,4 +1,4 @@
-<div class="card my-4" id="blog-view">
+<div class="my-4" id="blog-view">
   <div class="header-bar">
     <h3><%= @post.title %></h4>
     <h6>Words by: <%= @post.author %></h6>
@@ -8,9 +8,11 @@
     <p><%= @post.content %><p>
   </div>
 
-    <button data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
+  <div id= "lower-blog">
 
-    <p> <i class="fa-solid fa-heart"></i> <%= @post.postlikes.count %> <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%></p>
+    <h6 class="lower-icons"> <i class="fa-solid fa-heart"></i> <%= @post.postlikes.count %> <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%></h6>
+    <button class="lower-icons" data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
+    <button class="lower-icons" data-action="click->edit-homepage#blog">Back to blog</button>
 
-    <button data-action="click->edit-homepage#blog">Back to blog</button>
+  </div>
 </div>
