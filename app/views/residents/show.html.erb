@@ -1,17 +1,20 @@
-<img src="<%=@resident.photo%>" alt="Profile picture">
-<h2><%= @resident.name %></h2>
-<%= @resident.bio %>
-
-
-<% if @resident.radiosets.length >= 1 %>
-  <h3><%=@resident.name%>'s Sets: </h3>
-  <% @radiosets.each do |radioset| %>
-    <div>
-      <iframe width="560" height="315" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class= "show-container">
+  <div style ="width: 100% width: 100%; justify-content: center; display: flex;"><img src="<%=@resident.photo%>" alt="Profile picture"></div>
+    <div class = "resi-bio">
+      <h2><%= @resident.name %></h2>
+      <p><%= @resident.bio %><p>
     </div>
-  <% end %>
-<% else %>
-<h3><%=@resident.name%> currently has no sets uploaded</h3>
-<% end %>
-<button data-action="click->edit-homepage#residentlist">See residents</button>
-<button data-action="click->edit-homepage#radiosets">See radiosets</button>
+
+      <% if @resident.radiosets.length >= 1 %>
+        <h4><%=@resident.name%>'s Sets: </h4>
+        <% @radiosets.each do |radioset| %>
+          <div>
+            <iframe width="560" height="315" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        <% end %>
+      <% else %>
+      <h3><%=@resident.name%> currently has no sets uploaded</h3>
+      <% end %>
+      <button data-action="click->edit-homepage#residentlist">See residents</button>
+      <button data-action="click->edit-homepage#radiosets">See radiosets</button>
+</div>

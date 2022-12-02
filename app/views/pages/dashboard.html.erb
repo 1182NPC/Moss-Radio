@@ -30,86 +30,87 @@
   <%# TODO: Edit and delete buttons next to each resident and set DONE %>
 
   <%# Possible TODO: Save a blogpost to edit later? only appears when it is publised? DONE%>
+  <div class="dashboard">
+    <div class = "residents">
+      <div class="accordion" id="all-residents-collapsable">
+        <div class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            See all residents
+          </button>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#all-residents-collapsable">
+            <div class="accordion-body">
+              <% @residents.each do |resident| %>
 
-  <div class = "residents">
-    <div class="accordion" id="all-residents-collapsable">
-      <div class="accordion-header" id="headingOne">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          See all residents
-        </button>
-        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#all-residents-collapsable">
-          <div class="accordion-body">
-            <% @residents.each do |resident| %>
+                <div class="flex-for-buttons">
 
-              <div class="flex-for-buttons">
+                  <div class="resident-buttons">
+                      <%= link_to resident.name, resident_path(resident) %>
 
-                <div class="resident-buttons">
-                    <%= link_to resident.name, resident_path(resident) %>
-
-                    <% unless resident.radiosets.first.nil? %>
-                      <div class="accordion" id="resident-sets-collapsable">
-                        <h2 class="accordion-header" id="heading<%=resident.id%>num">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=resident.id%>num" aria-expanded="false" aria-controls="collapse<%=resident.id%>num">
-                            Past sets
-                          </button>
-                        </h2>
-                        <div id="collapse<%=resident.id%>num" class="accordion-collape collapse" aria-labelledby="heading<%=resident.id%>num" data-bs-parent="#resident-sets-collapsable">
-                          <div class="accordion-body">
-                            <ul>
-                              <% resident.radiosets.each do |set| %>
-                                <li> <%= link_to set.title, edit_radioset_path(set) %> </li>
-                              <% end %>
-                            </ul>
+                      <% unless resident.radiosets.first.nil? %>
+                        <div class="accordion" id="resident-sets-collapsable">
+                          <h2 class="accordion-header" id="heading<%=resident.id%>num">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=resident.id%>num" aria-expanded="false" aria-controls="collapse<%=resident.id%>num">
+                              Past sets
+                            </button>
+                          </h2>
+                          <div id="collapse<%=resident.id%>num" class="accordion-collape collapse" aria-labelledby="heading<%=resident.id%>num" data-bs-parent="#resident-sets-collapsable">
+                            <div class="accordion-body">
+                              <ul>
+                                <% resident.radiosets.each do |set| %>
+                                  <li> <%= link_to set.title, edit_radioset_path(set) %> </li>
+                                <% end %>
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    <% end %>
+                      <% end %>
 
-                </div>
-                <div class="edit-delete-buttons">
-                  <%= link_to "Edit", edit_resident_path(resident), class:"btn btn-secondary btn-sm"%>
-                  <%= link_to "Delete", resident_path(resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
-                </div>
-
-              </div>
-
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="posts">
-    <div class="accordion" id="all-posts-collapsable">
-      <div class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          See all blogposts
-        </button>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#all-posts-collapsable">
-          <div class="accordion-body">
-            <ul>
-              <% @posts.each do |post| %>
-                <li>
-                  <div class="post-date-button">
-                    <div class="post-and-date">
-                      <%= link_to post.title, post_path(post) %>
-                      <p>Created at: <%= post.created_at %> </p>
-                      <p>Updated at: <%= post.updated_at %> </p>
-                    </div>
-                    <div class="edit-delete-buttons">
-                      <%= link_to "Edit", edit_post_path(post), class:"btn btn-secondary btn-sm"%>
-                      <%= link_to "Delete", post_path(post), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
-                    </div>
                   </div>
-                </li>
+
+                  <div class="edit-delete-buttons">
+                    <%= link_to "Edit", edit_resident_path(resident), class:"btn btn-secondary btn-sm"%>
+                    <%= link_to "Delete", resident_path(resident), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
+                  </div>
+
+                </div>
+
               <% end %>
-            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="posts">
+      <div class="accordion" id="all-posts-collapsable">
+        <div class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            See all blogposts
+          </button>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#all-posts-collapsable">
+            <div class="accordion-body">
+              <ul>
+                <% @posts.each do |post| %>
+                  <li>
+                    <div class="post-date-button">
+                      <div class="post-and-date">
+                        <%= link_to post.title, post_path(post) %>
+                        <p>Created at: <%= post.created_at %> </p>
+                        <p>Updated at: <%= post.updated_at %> </p>
+                      </div>
+                      <div class="edit-delete-buttons">
+                        <%= link_to "Edit", edit_post_path(post), class:"btn btn-secondary btn-sm"%>
+                        <%= link_to "Delete", post_path(post), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger btn-sm"%>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

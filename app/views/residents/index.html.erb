@@ -3,7 +3,7 @@
     <div class = "resident_view">
       <ul>
         <% @residents.each do |resident| %>
-          <li><button data-action="click->edit-homepage#resident" data-value="<%=resident.id%>"><%=resident.name%></button></li>
+          <li><button id ="residents" data-action="click->edit-homepage#resident" data-value="<%=resident.id%>"><%=resident.name%></button></li>
         <% end %>
       </ul>
     </div>

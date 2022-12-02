@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
     @chatroom = Chatroom.first
@@ -14,6 +14,5 @@ class PagesController < ApplicationController
     @residents = Resident.all
     @posts = Post.all
     @radiosets = Radioset.all
-
   end
 end
