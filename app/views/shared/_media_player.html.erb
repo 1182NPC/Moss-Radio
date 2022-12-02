@@ -1,6 +1,7 @@
 
-<div data-controller="media">
+<div class="fa-play" data-controller="media">
+  <i id="play" data-action="click->media#play" data-media-target="icon" class="fa-solid fa-play"></i>
+  <%# <i class="fa-solid fa-volume"></i> %>
   <audio id="player" src="http://stream.radioparadise.com/aac-128" data-media-target="player"></audio>
-  <img id="play" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669907108/icons8-play-25_n4ujh6.png" data-action="click->media#play"data-media-target="icon" class="play">
   <input id="volume" type="range" data-action="change->media#volume" data-media-target="slider" class="background-color: green">
 </div>
