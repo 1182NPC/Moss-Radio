@@ -1,5 +1,4 @@
 class RadiosetsController < ApplicationController
-
   def new
     @radioset = Radioset.new
   end
@@ -9,11 +8,10 @@ class RadiosetsController < ApplicationController
   end
 
   def show
-
   end
 
   def create
-    #TODO: MAKE ADMIN ONLY
+    # TODO: MAKE ADMIN ONLY
     @resident = Resident.find(params[:resdient_id])
     @radioset = Radioset.new(radioset_params)
     @radioset.resident = @resident
@@ -37,14 +35,13 @@ class RadiosetsController < ApplicationController
   end
 
   def update
-    #TODO: MAKE ADMIN ONLY
+    # TODO: MAKE ADMIN ONLY
     @radioset = set_radioset
     @radioset.update(radioset_params)
   end
 
   def destroy
-    #TODO: MAKE ADMIN ONLY
-
+    # TODO: MAKE ADMIN ONLY
   end
 
   private

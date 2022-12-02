@@ -1,5 +1,6 @@
 .container {
-  padding-top: 30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 
   h1 {
     text-align: center;
@@ -11,25 +12,49 @@
     margin-top: 70px
   }
 
-  .residents {
-    margin-top: 50px;
-  }
 
   .posts {
     margin-top: 30px;
   }
 }
 
+.create-buttons {
+  margin-bottom: 50px;
+}
+
+.dashboard {
+  overflow-y: scroll !important;
+  max-height: 60vh;
+  margin-top: 5px;
+}
+
+.scroller {
+  overflow-y: scroll !important;
+  max-height: 40vh;
+  margin-top: 5px;
+}
+
+button {
+  margin: auto;
+}
+
+li {
+  text-align: left;
+}
+
 .flex-for-buttons {
   display: flex;
   min-height: 65px;
   justify-content: space-between;
+  margin-bottom: 10px;
+
 }
 
 .resident-buttons {
   display: flex;
   flex-direction: column;
   flex-grow: 4;
+  border-bottom: 2px solid black;
 
   a {
     min-height: 31px;
@@ -39,6 +64,7 @@
 .post-date-button {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px
 }
 
 .edit-delete-buttons {
@@ -63,16 +89,18 @@
   }
 }
 
-.box-big {
-  flex-direction: row-reverse;
+// .box-big {
+//   flex-direction: row-reverse;
 
-  admin-rocker {
-    padding-right: 10px;
-  }
-}
+//   admin-rocker {
+//     padding-right: 10px;
+//   }
+// }
 .post-and-date {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  border-bottom: 2px solid black;
 
   p {
     margin-bottom: 0;

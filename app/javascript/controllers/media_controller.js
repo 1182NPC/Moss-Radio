@@ -10,14 +10,14 @@ export default class extends Controller {
   }
 
   play() {
-    if (this.iconTarget.classList.contains("play")) {
+    if (this.iconTarget.classList.contains("fa-play")) {
     this.playerTarget.play()
-    this.iconTarget.classList.remove("play")
+    this.iconTarget.classList.remove("fa-play")
     this.iconTarget.classList.add("fa-pause")
     } else {
     this.playerTarget.pause()
     this.iconTarget.classList.remove("fa-pause")
-    this.iconTarget.classList.add("play")
+    this.iconTarget.classList.add("fa-play")
     }
   }
 

@@ -13,6 +13,5 @@ class PagesController < ApplicationController
     @residents = Resident.all
     @posts = Post.all
     @radiosets = Radioset.all
-
   end
 end

@@ -1,17 +1,16 @@
-<div class="container">
-
-  <div class="card my-4">
-
-    <h4><%= @post.title %></h4>
-    <h6><%= @post.author %></h6>
+<div class="card my-4" id="blog-view">
+  <div class="header-bar">
+    <h3><%= @post.title %></h4>
+    <h6>Words by: <%= @post.author %></h6>
+  </div>
+  <div class="blog-content">
     <h6>Published: <%= @post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
-    <h6><%= @post.content %></h6>
+    <p><%= @post.content %><p>
+  </div>
 
     <button data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
 
     <p> <i class="fa-solid fa-heart"></i> <%= @post.postlikes.count %> <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%></p>
 
     <button data-action="click->edit-homepage#blog">Back to blog</button>
-
-  </div>
 </div>
