@@ -39,12 +39,20 @@
   #central_container{
     height: 300px;
   }
+  iframe{
+    width: 200px;
+    height: 130px;
+  }
 }
 
 // /* Medium devices (landscape tablets, 600px and up) */
 @media only screen and (min-width: 600px) {
   #central_container{
     height: 400px;
+  }
+  iframe{
+    width: 300px;
+    height: 200px;
   }
 }
 
@@ -53,7 +61,8 @@
   #central_container{
     height: 500px;
   }
+  iframe{
+    width: 560px;
+    height: 315px;
+  }
 }
-
-// /* Extra large devices (large laptops and desktops, 1200px and up) */
-// @media only screen and (min-width: 1200px) {...}
