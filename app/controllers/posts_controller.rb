@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     @posts = Post.published
   end
@@ -50,5 +49,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :author, :date_published, :content)
   end
-
 end
