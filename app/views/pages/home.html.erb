@@ -15,6 +15,19 @@
     </div>
           <img id="logo" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884107/MOSS_3_uu5rj0.png" alt="">
       <div class="nav-right">
+      <div class="admin-rocker">
+      <% if current_user && current_user.admin? %>
+        <%= link_to dashboard_path do %>
+          <div class="mid">
+            <label class="rocker">
+              <input type="checkbox" unchecked>
+              <span class="switch-left">Admin</span>
+              <span class="switch-right">Home</span>
+            </label>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
       </div>
   </div>
 
@@ -27,7 +40,7 @@
         <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669905575/Tab_13_hndstq.png" alt="" data-action="click->edit-homepage#radiosets"></a></div>
 
       <div id="navmiddle">
-        <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669905575/Tab_14_eskqz3.png" alt="" data-action="click->edit-homepage#residents"  ></a></div>
+        <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669905575/Tab_14_eskqz3.png" alt="" data-action="click->edit-homepage#residentlist"  ></a></div>
 
       <div id="navbottom">
         <a href="#"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669990414/Tab_16_auhdy5.png" alt="" data-action="click->edit-homepage#blog"></a></div>
@@ -47,32 +60,7 @@
 
 
 
-  <div class="box-big">
-    <div class="admin-rocker">
-      <% if current_user && current_user.admin? %>
-        <%= link_to dashboard_path do %>
-          <div class="mid">
-            <label class="rocker">
-              <input type="checkbox" unchecked>
-              <span class="switch-left">Admin</span>
-              <span class="switch-right">Home</span>
-            </label>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="box">
-      <div class="bar">
-        <div class = "media">
-            <%= render "shared/media_player" %>
-          <div class="inside"><h1>Streaming Live: DJ KEV N PERRY || <%= Time.now.strftime("%I:%M") %></h1></div>
-          <img id ="vol" onclick="volume()" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669907255/icons8-voice-24_zpfzfp.png" alt="">
-          <input type="range" id="points" name="points" min="0" max="10">
-          </div>
-          <img id="logo" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1669884107/MOSS_3_uu5rj0.png" alt="">
-      </div>
-    </div>
-  </div>
+
 
   <div id="central_container">
     <div data-edit-homepage-target="central_container">

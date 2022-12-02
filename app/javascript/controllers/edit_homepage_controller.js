@@ -11,7 +11,7 @@ export default class extends Controller {
 
   blog(event) {
     event.preventDefault()
-    const url = "http://localhost:3000/posts"
+    const url = "/posts"
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/html" }
@@ -25,7 +25,7 @@ export default class extends Controller {
 
   radiosets(event) {
     event.preventDefault()
-    const url = "http://localhost:3000/radiosets"
+    const url = "/radiosets"
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/html" }
@@ -39,7 +39,7 @@ export default class extends Controller {
 
   residentlist(event) {
     event.preventDefault()
-    const url = "http://localhost:3000/residents"
+    const url = "/residents"
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/html" }
@@ -54,7 +54,7 @@ export default class extends Controller {
   post(event) {
     const value = event.target.dataset.value
     console.log(value)
-    const url = `http://localhost:3000/posts/${value}`
+    const url = `/posts/${value}`
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/html" }
@@ -68,7 +68,7 @@ export default class extends Controller {
   resident(event) {
     const value = event.target.dataset.value
     console.log(value)
-    const url = `http://localhost:3000/residents/${value}`
+    const url = `/residents/${value}`
     fetch(url, {
       method: "GET",
       headers: { "Accept": "text/html" }
@@ -82,7 +82,7 @@ export default class extends Controller {
   likepost(event) {
     const value = event.target.dataset.value
     console.log(value)
-    const postlikeurl = `http://localhost:3000/posts/${value}/postlikes`
+    const postlikeurl = `/posts/${value}/postlikes`
     fetch(postlikeurl, {
       method: "POST",
       headers: { "Accept": "text/html" }
