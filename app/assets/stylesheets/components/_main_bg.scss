@@ -89,8 +89,12 @@ body{
   width: 340px;
   height: 100%;
   margin-left: 75px;
-  background-color: red;
   position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: transparent;
+  padding: 20px;
+
 }
 
 
