@@ -37,12 +37,16 @@ Chatroom.create(name: "dashboard")
 end
 
 20.times do
-  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true, postlikes: (1..100).to_a.sample)
+  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true)
 end
 
 
 somelinks.each do |link|
   Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "#{Faker::Games::WarhammerFantasy.hero} #{Faker::Music.genre}" )
+end
+
+100.times do
+  Postlike.create(post_id: Post.all.sample.id, user_id: User.all.sample.id)
 end
 
 

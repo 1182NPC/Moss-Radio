@@ -2,7 +2,7 @@
   <%= simple_form_for [@post] do |f| %>
     <%= f.input :title %>
     <%= f.input :author %>
-    <%= f.input :content %>
+    <%= f.rich_text_area :rich_content %>
     <%= f.input :date_published, as: :date, html5: true %>
     <div class="bottom-buttons" style="display:flex;justify-content:space-around">
       <%= f.submit class: "btn btn-primary" %>
