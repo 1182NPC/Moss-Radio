@@ -1,9 +1,13 @@
 <div class="container w-50" data-controller="edit_homepage">
   <div class = "blog-index">
+      <div id ="logo-wrapper">
+        <img id = "moss" src ="https://res.cloudinary.com/depkh8amy/image/upload/v1670241197/mosslogo_be5hmh.png">
+      </div>
+      <div class = "blog-header"><h2> Blog </h2></div>
     <% @posts.each do |post| %>
       <div class="blog-wrapper">
         <div style ="width: 60%;">
-          <h2><%= post.title %></h2>
+          <h2 class = "blog-header"><%= post.title %></h2>
           <h4><%= post.author %></h4>
           <h5>Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h5>
         </div>
