@@ -1,0 +1,107 @@
+$colors: #7600fe, #5500fe, #5602fe, #ffffff, #1300fd, #010afe, #0127fe, #0143fe, #0165fb, #0183fb, #01a2fe, #01c0fb, #02defc, #00fdfd, #03fcd4, #00ffc1;
+$colors-2: #09f6b8, #00ffc1, #03fcd4, #00fffc, #02defc, #02bffe, #01a2fe, #0185fe, #0168fe, #014bfe, #0127fe, #010afe, #1300fd, #3100fe, #5500fe, #7602fe, #7100f6;
+$white: #fff;
+
+* {
+  box-sizing: border-box;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+// body {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+//   min-height: 100vh;
+//   background: $white;
+//   overflow: hidden;
+// }
+
+#container {
+  position: relative;
+  width: 22.813rem;
+  height: 22.813rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circles {
+  display: flex;
+  flex-wrap: wrap;
+  .circle {
+    position: relative;
+    width: 1.563rem;
+    height: 1.563rem;
+    margin: -0.125rem;
+    border-radius: 50%;
+  }
+}
+
+@for $i from 1 through 16 {
+  @for $circle from 2 through 2 {
+    .circles:nth-child(#{$i}) .circle:nth-child(#{$circle}n) {
+      opacity: 0;
+      background: nth($colors, $i);
+      animation: circleSize 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      animation-delay: #{($circle * 0.1) - (($i - 1) * 0.1)}s;
+    }
+  }
+}
+
+@for $i from 1 through 17 {
+  @for $circle from 2 through 2 {
+    .circles:nth-child(#{$i}) .circle:not(:nth-child(#{$circle}n)) {
+      opacity: 1;
+      background: nth($colors-2, $i);
+      animation: circleSizeTwo 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      animation-delay: #{($circle * 0.1) - (($i - 1) * 0.1)}s;
+    }
+  }
+}
+
+@supports (display: grid) {
+  // body {
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-gap: 0.625rem;
+  //   grid-template-areas: ". main main ." ". main main .";
+  // }
+
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+@keyframes circleSize {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes circleSizeTwo {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

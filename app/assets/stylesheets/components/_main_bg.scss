@@ -43,7 +43,7 @@ body{
   justify-content: space-between;
   flex-wrap: nowrap;
   }
-  
+
   #navtop {
 
     height: 33%;
@@ -286,4 +286,8 @@ display: flex;
 }
 .nav-right{
   width: 40%;
+}
+
+.central_container{
+  margin: auto;
 }
