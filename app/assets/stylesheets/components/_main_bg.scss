@@ -39,25 +39,28 @@ body{
 
 .nav{
   display: flex;
+  position: absolute;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  top: 18%;
   flex-wrap: nowrap;
+  height: 70%;
   }
-  
+
   #navtop {
 
-    height: 33%;
+    height: 32.5%;
   }
 
   #navmiddle {
 
-    height: 33%;
+    height: 32.5%;
 
   }
 
   #navbottom {
 
-    height: 33%;
+    height: 32.5%;
   }
 
   #navtop img, #navmiddle img, #navbottom img {
@@ -66,16 +69,17 @@ body{
     border-top-right-radius: 32%;
     background-size: 80%;
     filter: drop-shadow(16px 16px 20px rgba(116, 47, 93, 0.787));
-    transform: translate(-15px);
-    filter: brightness(0.8);
+    transform: translate(-20px);
+    opacity: 80%;
+
   }
 
 
   #navtop img:hover, #navmiddle img:hover, #navbottom img:hover {
-    transform: translate(0);
-    transition: 0.5s;
+    transform: translate(-5px);
     filter: drop-shadow(16px 16px 40px rgba(116, 47, 93, 0.887));
-    filter: brightness(1.0)
+    opacity: 100%;
+    transition: 0.5s;
   }
 
   /* Chatbox */
