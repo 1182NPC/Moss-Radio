@@ -2,6 +2,12 @@
   justify-content: center;
 }
 
+.resident{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
 img {
   display: block;
 }
@@ -12,5 +18,38 @@ p, h2, h4, h5, h6 {
 }
 
 .resi-bio {
-  background-image: url(https://res.cloudinary.com/depkh8amy/image/upload/v1669895410/Rectangle_41_xf05vo.png);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dashed white;
 }
+
+.sets{
+  margin: 10px;
+  padding: 20px;
+  border-bottom: 1px dashed white;
+
+}
+.residentlower{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.residentbutton{
+  color: white;
+  text-shadow: 2px 2px 2px #8E888C;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+}
+
+.residentbutton:hover{
+  color: #f7e0f7;
+  transition: 0.3s;
+
+}
+
+
