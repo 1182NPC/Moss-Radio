@@ -1,25 +1,26 @@
 <div class= "show-container">
-  <div class="resident"><img src="<%=@resident.photo%>" alt="Profile picture"></div>
+  <div style ="width: 100% width: 100%; justify-content: center; display: flex;"><img src="<%=@resident.photo%>" alt="Profile picture"></div>
     <div class = "resi-bio">
       <h2><%= @resident.name %></h2>
       <p><%= @resident.bio %><p>
     </div>
 
     <div class="sets">
+
       <% if @resident.radiosets.length >= 1 %>
         <h4><%=@resident.name%>'s Sets: </h4>
         <% @radiosets.each do |radioset| %>
           <div>
-            <iframe max-width="50%" max-height="30%" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           </div>
         <% end %>
       <% else %>
       <h3><%=@resident.name%> currently has no sets uploaded</h3>
-      </div>
+    </div>
       <% end %>
-      <div class="residentlower">
-        <button class="residentbutton" data-action="click->edit-homepage#residentlist">See all residents</button>
-        <button class="residentbutton" data-action="click->edit-homepage#radiosets">See all radiosets</button>
-      </div>
+    <div class="residentlower">
+      <button class="residentbutton" data-action="click->edit-homepage#residentlist">See residents</button>
+      <button class="residentbutton" data-action="click->edit-homepage#radiosets">See radiosets</button>
+    </div>
 </div>
