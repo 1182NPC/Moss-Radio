@@ -1,7 +1,8 @@
-<div class="container" style="overflow-y:scroll;">
+<div class="container" style="overflow-y:scroll">
   <%= simple_form_for [@post] do |f| %>
     <%= f.input :title %>
     <%= f.input :author %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.rich_text_area :rich_body %>
     <%= f.input :date_published, as: :date, html5: true %>
     <%= f.submit class: "btn btn-success"%>
