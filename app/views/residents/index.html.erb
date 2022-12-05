@@ -1,9 +1,10 @@
 
 
     <div class = "resident_view">
+     <h2> Residents </h2>
       <ul>
         <% @residents.each do |resident| %>
-          <li><button id ="residents" data-action="click->edit-homepage#resident" data-value="<%=resident.id%>"><%=resident.name%></button></li>
+          <li id = "radio-list"><button id ="residents" data-action="click->edit-homepage#resident" data-value="<%=resident.id%>"><%=resident.name%></button></li>
         <% end %>
       </ul>
     </div>
