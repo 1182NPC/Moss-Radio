@@ -30,14 +30,20 @@ puts 'Creating seeds...'
 
 User.create(email: "test@test.org", password: "123456", nickname: "nick", admin: true)
 
-Chatroom.create(name: "dashboard")
+100.times do
+  User.create(email: Faker::Internet.email, password: "123456", nickname: Faker::Internet.username, admin: false)
+end
+
+Chatroom.create(name: "ChatMOSSphere")
+
+
 
 20.times do
   Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
 end
 
 20.times do
-  Post.create(title: Faker::Books::CultureSeries.culture_ship, content: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true)
+  Post.create(title: Faker::Books::CultureSeries.culture_ship, rich_body: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true)
 end
 
 
@@ -45,7 +51,7 @@ somelinks.each do |link|
   Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "#{Faker::Games::WarhammerFantasy.hero} #{Faker::Music.genre}" )
 end
 
-100.times do
+200.times do
   Postlike.create(post_id: Post.all.sample.id, user_id: User.all.sample.id)
 end
 

@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @chatroom = Chatroom.first
+    @chatroom = Chatroom.last
     @message = Message.new
     @residents = Resident.all
     @radiosets = Radioset.all
