@@ -1,6 +1,14 @@
-.container {
+#dashboard-container {
   padding-top: 0px;
   padding-bottom: 0px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   h1 {
     text-align: center;
@@ -11,27 +19,40 @@
     justify-content: space-between;
     margin-top: 70px
   }
-
-
-  .posts {
-    margin-top: 30px;
-  }
 }
 
 .create-buttons {
   margin-bottom: 50px;
 }
 
-.dashboard {
-  overflow-y: scroll !important;
-  max-height: 60vh;
-  margin-top: 5px;
-}
 
-.scroller {
-  overflow-y: scroll !important;
-  max-height: 40vh;
-  margin-top: 5px;
+  .accordion-body {
+    padding-top: 5px;
+    overflow-y: scroll !important;
+  }
+
+.dashboard {
+  height: 100%;
+
+  .posts {
+    position: sticky;
+    margin-top: 5px;
+  }
+
+  .accordion-body {
+    max-height: 70vh;
+  }
+
+  .residents {
+
+    .collapsed {
+      margin-bottom: 20px
+    }
+
+    .accordion-body {
+      max-height: 45vh;
+    }
+  }
 }
 
 button {
