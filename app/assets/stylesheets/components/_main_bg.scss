@@ -46,7 +46,7 @@ body{
   #navtop a {
     position: absolute;
     width: 100px;
-    left: -50px;
+    left: -12px;
     transition: 0.5s;
     top: 0%;
     bottom: 66.67%;
@@ -54,7 +54,7 @@ body{
   #navmiddle a {
     position: absolute;
     width: 100px;
-    left: -50px;
+    left: -12px;
     transition: 0.5s;
     top: 33.33%;
     bottom: 33.33%;
@@ -62,7 +62,7 @@ body{
   #navbottom a {
     position: absolute;
     width: 100px;
-    left: -50px;
+    left: -12px;
     transition: 0.5s;
     top: 66.67%;
     bottom: 0%;
@@ -105,7 +105,7 @@ body{
 
 .btn-r img{
   position: absolute;
-  top: 80px;
+  top: 66px;
   left: 22px;
   cursor:grab;
   /* width: 26px;
@@ -220,7 +220,7 @@ body{
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
   }
- }
+}
 
 .nav-left{
   width: 40%;
