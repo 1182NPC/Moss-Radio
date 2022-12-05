@@ -48,3 +48,7 @@ iframe {
   text-shadow: 2px 2px 2px #8E888C;
   text-align: center;
 }
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 5s;
+}
