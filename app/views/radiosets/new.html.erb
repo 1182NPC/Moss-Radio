@@ -1,9 +1,10 @@
-<%= simple_form_for [@radioset] do |f| %>
-  <%= f.input :date %>
-  <%= f.input :audio_link %>
-  <%= f.association :resident %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "return to dashboard", "/dashboard" %>
-
+<div class="container newedit">
+  <%= simple_form_for [@radioset] do |f| %>
+    <%= f.input :date %>
+    <%= f.input :audio_link %>
+    <%= f.association :resident %>
+    <div class="bottom-buttons" style="display:flex;justify-content:space-around">
+      <%= f.submit class: "btn btn-primary"%>
+      <%= link_to "return to dashboard", "/dashboard", class:"btn btn-secondary"%>
+    </div>
+  <% end %>

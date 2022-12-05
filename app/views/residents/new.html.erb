@@ -1,6 +1,10 @@
-<%= simple_form_for [@resident] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :bio %>
-  <%= f.input :links %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+<div class="container newedit">
+  <%= simple_form_for [@resident] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :bio %>
+    <%= f.input :links %>
+    <div class="bottom-buttons" style="display:flex;justify-content:space-around">
+      <%= f.submit class: "btn btn-primary"%>
+      <%= link_to "return to dashboard", "/dashboard", class:"btn btn-secondary"%>
+    </div>
+  <% end %>
