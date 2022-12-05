@@ -46,7 +46,7 @@ somelinks.each do |link|
 end
 
 100.times do
-  PostLike.create(post_id: Post.all.sample.id, user_id: User.all.sample.id)
+  Postlike.create(post_id: Post.all.sample.id, user_id: User.all.sample.id)
 end
 
 
