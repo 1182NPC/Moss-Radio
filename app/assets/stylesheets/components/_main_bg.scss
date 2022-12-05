@@ -38,37 +38,43 @@ body{
 /* Side navbar */
 
 .nav{
-  position: absolute;
-  width: 64px;
-  height: 666px;
-  top: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   }
-  #navtop a {
-    position: absolute;
-    width: 100px;
-    left: -50px;
-    transition: 0.5s;
-    top: 0%;
-    bottom: 66.67%;
+  #navtop {
+
+    height: 33%;
   }
-  #navmiddle a {
-    position: absolute;
-    width: 100px;
-    left: -50px;
-    transition: 0.5s;
-    top: 33.33%;
-    bottom: 33.33%;
-    }
-  #navbottom a {
-    position: absolute;
-    width: 100px;
-    left: -50px;
-    transition: 0.5s;
-    top: 66.67%;
-    bottom: 0%;
+
+  #navmiddle {
+
+    height: 33%;
+
   }
-  #navtop a:hover,#navmiddle a:hover,#navbottom a:hover {
-    left: -10px;
+
+  #navbottom {
+
+    height: 33%;
+  }
+
+  #navtop img, #navmiddle img, #navbottom img {
+    height: 100%;
+    object-fit: fill;
+    border-top-right-radius: 32%;
+    background-size: 80%;
+    filter: drop-shadow(16px 16px 20px rgba(116, 47, 93, 0.787));
+    transform: translate(-3.6rem);
+    filter: brightness(0.5);
+  }
+
+
+  #navtop img:hover, #navmiddle img:hover, #navbottom img:hover {
+    transform: translate(0);
+    transition: 0.5s;
+    filter: drop-shadow(16px 16px 40px rgba(116, 47, 93, 0.887));
+    filter: brightness(1.0)
   }
 
   /* Chatbox */
