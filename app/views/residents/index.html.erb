@@ -1,7 +1,7 @@
 
 
     <div class = "resident_view">
-     <h2> Residents </h2>
+      <div class = "header"><h2> MOSS Residents </h2></div>
       <ul>
         <% @residents.each do |resident| %>
           <li id = "radio-list"><button id ="residents" data-action="click->edit-homepage#resident" data-value="<%=resident.id%>"><%=resident.name%></button></li>
