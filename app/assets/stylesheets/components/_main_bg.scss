@@ -106,9 +106,12 @@ body{
 }
 
 #chat:hover {
-  transform: translate(-20px);
-  filter: brightness(0.8);
-  transition: 0.5s
+
+  &:not(.active) {
+    transform: translate(-20px);
+    filter: brightness(0.8);
+    transition: 0.5s
+  }
 }
 
 #chat.active {
