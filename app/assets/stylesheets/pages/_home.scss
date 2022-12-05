@@ -26,7 +26,7 @@
 #central_container{
   background-color: transparent;
   width: 50%;
-  height: 800px;
+  height: 75%;
   margin: auto auto;
   overflow-y:scroll;
   margin-top: 100px;
@@ -59,7 +59,7 @@
 // /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   #central_container{
-    height: 650px;
+    height: 75%;
   }
   iframe{
     width: 100%;
@@ -94,7 +94,7 @@
 // /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-height: 700px) {
   #central_container{
-    height: 650px;
+    height: 75%;
   }
   iframe{
     width: 100%;
