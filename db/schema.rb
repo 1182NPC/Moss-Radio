@@ -89,6 +89,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_083937) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "radiosetlikes", force: :cascade do |t|
+    t.bigint "radioset_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["radioset_id"], name: "index_radiosetlikes_on_radioset_id"
+    t.index ["user_id"], name: "index_radiosetlikes_on_user_id"
+  end
+
   create_table "radiosets", force: :cascade do |t|
     t.datetime "date"
     t.string "audio_link"
@@ -129,5 +138,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_083937) do
   add_foreign_key "postlikes", "posts"
   add_foreign_key "postlikes", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "radiosetlikes", "radiosets"
+  add_foreign_key "radiosetlikes", "users"
   add_foreign_key "radiosets", "residents"
 end

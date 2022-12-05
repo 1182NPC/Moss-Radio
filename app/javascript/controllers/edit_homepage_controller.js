@@ -94,4 +94,6 @@ export default class extends Controller {
     this.chatTarget.classList.toggle('active');
   }
 
+
+
 }
