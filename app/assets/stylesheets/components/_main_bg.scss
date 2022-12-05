@@ -45,6 +45,7 @@ body{
   top: 18%;
   flex-wrap: nowrap;
   height: 70%;
+  filter: brightness(1.2)
   }
 
   #navtop {
@@ -63,12 +64,23 @@ body{
     height: 32.5%;
   }
 
+  #navtop, #navmiddle, #navbottom {
+    height: 32.5;
+    filter:brightness(1.1);
+  }
+
+  #navtop:hover, #navmiddle:hover, #navbottom:hover {
+    filter:brightness(0.9);
+    transition: 0.5s
+  }
+
   #navtop img, #navmiddle img, #navbottom img {
     height: 100%;
     object-fit: fill;
     border-top-right-radius: 32%;
     background-size: 80%;
-    filter: drop-shadow(16px 16px 20px rgba(116, 47, 93, 0.787));
+    filter: drop-shadow(10px 10px 10px rgba(116, 47, 93, 0.314));
+    // filter: brightness(1.1);
     transform: translate(-20px);
     opacity: 80%;
 
@@ -77,7 +89,8 @@ body{
 
   #navtop img:hover, #navmiddle img:hover, #navbottom img:hover {
     transform: translate(-5px);
-    filter: drop-shadow(16px 16px 40px rgba(116, 47, 93, 0.887));
+    filter: drop-shadow(16px 10px 25px rgba(116, 47, 93, 0.5));
+    // filter: brightness(1.0);
     opacity: 100%;
     transition: 0.5s;
   }
@@ -90,10 +103,17 @@ body{
   right: -360px;
   transition: 0.5s;
   bottom: 0%;
-
-
-
 }
+
+#chat:hover {
+
+  &:not(.active) {
+    transform: translate(-20px);
+    filter: brightness(0.8);
+    transition: 0.5s
+  }
+}
+
 #chat.active {
   right: -10px;
 }
