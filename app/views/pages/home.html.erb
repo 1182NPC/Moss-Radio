@@ -25,7 +25,10 @@
               <span class="switch-right">Home</span>
             </label>
           </div>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
         <% end %>
+          <% elsif user_signed_in %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
       <% end %>
     </div>
       </div>
