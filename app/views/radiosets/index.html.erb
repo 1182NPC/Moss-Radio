@@ -1,10 +1,14 @@
 
+<div id ="logo-wrapper">
+  <img id = "moss" src ="https://res.cloudinary.com/depkh8amy/image/upload/v1670241197/mosslogo_be5hmh.png">
+</div>
+  <div class = "radio-header"><h2> Sets </h2></div>
   <% @radiosets.each do |radioset| %>
-    <div class = "profile-index">
-      <div class = "name-span">
-         <div style ="width: 50%;"><h3><%=radioset.resident.name%></h3></div>
-          <div style = "width: 50%; text-align: right;"><button id ="radio-sets" data-action="click->edit-homepage#resident" data-value="<%=radioset.resident.id%>">View Profile</button></div>
-      </div>
+      <div class = "profile-index">
+        <div class = "name-span">
+          <div style ="width: 50%;"><h3><%=radioset.resident.name%></h3></div>
+            <div style = "width: 50%; text-align: right;"><button id ="radio-sets" data-action="click->edit-homepage#resident" data-value="<%=radioset.resident.id%>">View Profile</button></div>
+        </div>
       <div class = "audio-link">
         <iframe width="560" height="315" src="<%=radioset.audio_link%>" title="Video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
