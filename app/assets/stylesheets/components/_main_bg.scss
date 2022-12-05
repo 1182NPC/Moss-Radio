@@ -177,13 +177,12 @@ body{
 .inside{
   display: flex;
   border-radius: 25px;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   padding: 6px;
   overflow: hidden;
-  // text-overflow: clip;
   width: 181px;
   height: 36px;
-  /* margin-left: 80px; */
+  padding-top: 8px;
 }
 
 #play i{
@@ -191,11 +190,14 @@ body{
   height: auto;
   cursor:grab;
 }
+
 #logo{
   align-self: flex-end;
-  width: 80px;
+  width: 160px;
   height: 100%;
   margin-bottom: 11px;
+  margin: top;
+  margin-top: 11px;
 }
 /* input[type="range"] {
   -webkit-appearance: none;
@@ -254,7 +256,7 @@ body{
 }
 
 .nav-left{
-  width: 40%;
+  width: 50%;
   gap: 100px
 }
 
@@ -268,7 +270,7 @@ body{
 
 .topnavbar{
   display: flex;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid white;
   justify-content: space-between;
   // background-color: white;
 
@@ -309,5 +311,5 @@ display: flex;
   display: inline;
 }
 .nav-right{
-  width: 40%;
+  width: 50%;
 }
