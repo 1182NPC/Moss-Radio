@@ -1,6 +1,7 @@
 # Scope in rails -
 
 class Post < ApplicationRecord
+  has_many_attached :photos
   has_rich_text :rich_body
   belongs_to :user
   has_many :postlikes, dependent: :destroy
