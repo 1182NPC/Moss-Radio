@@ -20,7 +20,6 @@ h3 {
 }
 
 .profile-index {
-  box-shadow: 2px 1px 2px 2px #8e888c68;
   margin: 10px;
   padding: 10px;
 }
@@ -48,4 +47,8 @@ iframe {
   color: white;
   text-shadow: 2px 2px 2px #8E888C;
   text-align: center;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 5s;
 }
