@@ -8,11 +8,18 @@
     <%= @post.rich_body %>
   </div>
 
+    <div class="heart">
+      <i class="fa-solid fa-heart lower-icons"></i> <%= @post.postlikes.count %> <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%>
+    </div>
   <div id= "lower-blog">
 
-    <h6 class="lower-icons"> <i class="fa-solid fa-heart"></i> <%= @post.postlikes.count %> <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%></h6>
-    <button class="lower-icons" data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
-    <button class="lower-icons" data-action="click->edit-homepage#blog">Back to blog</button>
+    <div class="lower-icons">
+      <button class="lower-icons" data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
+    </div>
+    <div class="lower-icons">
+      <button class="lower-icons" data-action="click->edit-homepage#blog">Back to blog</button>
+    </div>
 
   </div>
+
 </div>
