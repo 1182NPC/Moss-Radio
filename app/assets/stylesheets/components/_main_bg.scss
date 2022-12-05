@@ -42,28 +42,25 @@ body{
   position: absolute;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  top: 14%;
   flex-wrap: nowrap;
-
-  // height: 80%;
-
+  height: 80%;
   }
 
   #navtop {
 
-    height: 30%;
+    height: 32.5%;
   }
 
   #navmiddle {
 
-    height: 30%;
+    height: 32.5%;
 
   }
 
   #navbottom {
 
-    height: 30%;
+    height: 32.5%;
   }
 
   #navtop img, #navmiddle img, #navbottom img {
