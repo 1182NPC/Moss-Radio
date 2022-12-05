@@ -1,7 +1,7 @@
 # Scope in rails -
 
 class Post < ApplicationRecord
-  has_rich_text :rich_content
+  has_rich_text :rich_body
   belongs_to :user
   has_many :postlikes, dependent: :destroy
   scope :published, -> { where(published: true) }
