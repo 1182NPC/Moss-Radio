@@ -1,6 +1,14 @@
+.header{
+  justify-content: center;
+  display: flex;
+}
 
 h2 {
+  width: 100%;
   text-align: center;
+  font-size: 60px;
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
 }
 
 #radio-list {
@@ -16,10 +24,15 @@ ul {
   background: transparent;
   border: none;
   font-size: 30px;
-  color: white;
+  color: #f7e0f7;
   text-shadow: 0px 2px 2px #8E888C;
   margin: 10px;
   text-align: center;
+}
+
+#residents:hover {
+  color: white;
+  transition: 0.5s;
 }
 
 a {
