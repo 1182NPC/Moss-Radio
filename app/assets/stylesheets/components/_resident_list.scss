@@ -1,11 +1,15 @@
 
-// index.html
+h2 {
+  text-align: center;
+}
 
-// resident list
-
-ul {
+#radio-list {
   list-style: none;
   text-align: center;
+}
+
+ul {
+  padding: 0;
 }
 
 #residents {
