@@ -1,7 +1,10 @@
 
 
     <div class = "resident_view">
-      <div class = "header"><h2> MOSS Residents </h2></div>
+      <div id ="logo-wrapper">
+        <img id = "moss" src ="https://res.cloudinary.com/depkh8amy/image/upload/v1670241197/mosslogo_be5hmh.png">
+      </div>
+      <div class = "resi-header"><h2 id ="resi-h2"> Residents </h2></div>
       <ul>
         <% @residents.each do |resident| %>
           <li id = "radio-list"><button id ="residents" data-action="click->edit-homepage#resident" data-value="<%=resident.id%>"><%=resident.name%></button></li>

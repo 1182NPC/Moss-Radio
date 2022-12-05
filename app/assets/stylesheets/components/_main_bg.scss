@@ -43,6 +43,7 @@ body{
   justify-content: space-between;
   flex-wrap: nowrap;
   }
+  
   #navtop {
 
     height: 33%;
@@ -90,7 +91,7 @@ body{
 
 }
 #chat.active {
-  right: -20px;
+  right: -10px;
 }
 
 .chatbox{
@@ -111,7 +112,7 @@ body{
 
 .btn-r img{
   position: absolute;
-  top: 80px;
+  top: 66px;
   left: 22px;
   cursor:grab;
   /* width: 26px;
@@ -226,7 +227,7 @@ body{
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
   }
- }
+}
 
 .nav-left{
   width: 40%;
