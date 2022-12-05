@@ -1,14 +1,19 @@
+.outer {
+  height: 95%;
+  overflow-y: scroll;
+}
+
 #dashboard-container {
   padding-top: 0px;
   padding-bottom: 0px;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
 
   ::-webkit-scrollbar {
     display: none;
   }
+
 
   h1 {
     text-align: center;
@@ -22,17 +27,16 @@
 }
 
 .create-buttons {
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 
 
-  .accordion-body {
-    padding-top: 5px;
-    overflow-y: scroll !important;
-  }
+.accordion-body {
+  padding-top: 50px;
+  overflow-y: scroll !important;
+}
 
 .dashboard {
-  height: 100%;
 
   .posts {
     position: sticky;
@@ -40,13 +44,15 @@
   }
 
   .accordion-body {
-    max-height: 70vh;
+    max-height: 65vh;
   }
 
   .residents {
 
+    margin-top: 30px;
+
     .collapsed {
-      margin-bottom: 20px
+      margin-bottom: 30px
     }
 
     .accordion-body {
