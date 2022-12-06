@@ -1,0 +1,35 @@
+.login{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#login-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#logo-flex{
+  margin: 0;
+  padding: 0;
+}
+
+.login img{
+  width: 300px;
+  // width: ;
+}
+
+.login-head{
+  display: flex;
+  align-items: center;
+
+}
+
+.login-full label {
+  color: white;
+}
+
+#login-btn input{
+  color: white;
+}
