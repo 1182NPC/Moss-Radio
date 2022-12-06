@@ -6,10 +6,11 @@
   <div class="blog-content">
     <h6>Published: <%= @post.date_published.strftime("%a %b %e at %l:%M %p") %></h6>
     <%= @post.rich_body %>
-
-    <% @post.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+    <div class="imagesforblog">
+      <% @post.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
   </div>
 
     <div class="heart">

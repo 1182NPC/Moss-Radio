@@ -7,6 +7,12 @@ ul {
   list-style: none;
 }
 
+#dashboardbox {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
 #dashboard-container {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -55,15 +61,14 @@ ul {
 
     margin-top: 30px;
 
-    .collapsed {
-      margin-bottom: 30px
-    }
-
     .accordion-body {
       max-height: 45vh;
     }
   }
 }
+
+
+
 
 button {
   margin: auto;

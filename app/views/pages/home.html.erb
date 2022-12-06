@@ -61,8 +61,7 @@
 
     </div>
 
-    <div id="chat" data-edit-homepage-target="chat">
-
+    <div id="chat" data-edit-homepage-target="chat" data-controller="chatroom-subscription" >
         <div class="message-submit">
         <%= simple_form_for [@chatroom, @message],
             html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
@@ -77,8 +76,8 @@
       </div>
 
         <div class="chatbox">
-
-        <%= render "shared/chat" %>
+          <h1 style="color: white;"><%= @chatroom.name %></h1>
+          <%= render "shared/chat" %>
 
         </div>
         <span href="#" class="btn-r" data-action="click->edit-homepage#show"><img src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1670237456/Chat_yfmqsb.png" alt=""></span>
