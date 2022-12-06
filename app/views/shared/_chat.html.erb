@@ -1,4 +1,7 @@
 <%# CHAT--------------------------------------CHAT %>
+
+
+
 <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>" data-chatroom-subscription-target="scroll">
 
   <h1><%= @chatroom.name %></h1>
@@ -8,6 +11,8 @@
       <%= render "shared/message", message: message %>
     <% end %>
   </div>
+
+  
 
   <%# <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button> %>
 </div>
