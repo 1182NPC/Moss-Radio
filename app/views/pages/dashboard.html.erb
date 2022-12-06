@@ -16,12 +16,12 @@
 <div class="outer">
   <div class = "container-sm" id="dashboard-container">
 
-    <h1>Welcome to the admin dashboard</h1>
+    <h2 style='text-align: center;'>Welcome to the admin dashboard</h1>
 
     <div class="create-buttons">
-      <%= link_to 'Create new post', new_post_path, class:"btn btn-primary"%>
-      <%= link_to 'Create new resident', new_resident_path, class:"btn btn-primary"%>
-      <%= link_to 'Create new set', new_radioset_path, class:"btn btn-primary"%>
+      <%= link_to 'Create new post', new_post_path, id:"residents", style:'font-size: 25px;' %>
+      <%# <%= link_to 'Create new resident', new_resident_path, id:"residents", style:'font-size: 25px'%> %>
+      <%= link_to 'Create new set', new_radioset_path, id:"residents", style:'font-size: 25px'%>
     </div>
 
 
