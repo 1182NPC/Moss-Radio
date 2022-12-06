@@ -3,7 +3,10 @@ class PostlikesController < ApplicationController
   skip_forgery_protection
 
   def create
-    @post.postlikes.create(user_id: current_user.id)
+    @postlike = @post.postlikes.create(user_id: current_user.id)
+    render json: {
+      likes: @post.postlikes.count
+    }, status: 200
   end
 
   private

@@ -1,4 +1,4 @@
-<div class="my-4 animate__animated animate__slideInUp" id="blog-view">
+<div class="my-4 animate__animated animate__slideInUp" id="blog-view" data-edit-homepage-target="showpage">
   <div class="header-bar">
     <h3><%= @post.title %></h4>
     <h6>Words by: <%= @post.author %></h6>
@@ -14,16 +14,22 @@
   </div>
 
     <div class="heart">
-      <i class="fa-solid fa-heart lower-icons"></i> <%= @post.postlikes.count %> <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%>
+      <i class="fa-solid fa-heart lower-icons"></i>
+      <div data-edit-homepage-target="likes">
+        <%= @post.postlikes.count%>
+      </div>
+      <%= (@post.postlikes.count) == 1 ? ' Like ' : ' Likes'%>
     </div>
+
   <div id= "lower-blog">
 
-    <div class="lower-icons">
-      <button class="lower-icons" data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
-    </div>
+    <% if @post.postlikes.where(user_id: current_user.id).first.nil? %>
+      <div class="lower-icons" data-edit-homepage-target="likebutton">
+        <button class="lower-icons" data-action="click->edit-homepage#likepost" data-value="<%=@post.id%>">Like post</button>
+      </div>
+    <% end %>
     <div class="lower-icons">
       <button class="lower-icons" data-action="click->edit-homepage#blog">Back to blog</button>
     </div>
-
   </div>
 </div>

@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="edit-homepage"
 export default class extends Controller {
-  static targets = ["central_container", "chat"]
+  static targets = ["central_container", "chat", "showpage", "likes", "likebutton"]
 
   connect() {
     console.log("controller is here!")
@@ -81,21 +81,22 @@ export default class extends Controller {
 
   likepost(event) {
     const value = event.target.dataset.value
-    console.log(value)
     const postlikeurl = `/posts/${value}/postlikes`
     fetch(postlikeurl, {
       method: "POST",
-      headers: { "Accept": "text/html" }
+      headers: { "Accept": "application/json" },
+    }).then(response => response.json()).then((result) => {
+      console.log('Success:', result);
+      this.likesTarget.innerText = result.likes
+      this.likebuttonTarget.style.display = "none";
     })
-    this.post(event)
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
 
    show() {
     this.chatTarget.classList.toggle('active');
   }
-
-
-
-
 
 }
