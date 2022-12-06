@@ -216,6 +216,11 @@ body{
   min-height: 100%;
 }
 
+#centerplay {
+  display: flex;
+  justify-content: center;
+}
+
 .bar #slidevol{
   white-space: nowrap;
   font-family:'Inter';
@@ -232,13 +237,19 @@ body{
   animation: my-animation 15s linear infinite;
 }
 
+.centeranimate {
+  display: flex;
+  justify-content: center;
+
+  #live {
+    margin-bottom: 0px;
+  }
+}
+
 .bar #live{
   font-family:'Inter';
   color: white;
   font-size:medium;
-  position: relative;
-
-  margin-top: 3%;
   --animate-duration:4s
 }
 
@@ -292,6 +303,7 @@ body{
   .admin-rocker {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 5px;
   }
 
 }
@@ -300,6 +312,8 @@ body{
   gap: 28px;
   align-items: center;
 }
+
+
 
 
 .volume-control {
@@ -378,10 +392,6 @@ body{
 display: flex;
 }
 
-
-.fa-play{
-  padding-top: 8px
-}
 .fa-solid{
   height: auto;
   cursor:grab;
@@ -389,7 +399,16 @@ display: flex;
   display: inline;
 }
 .nav-right{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
   width: 50%;
+  gap: 30px;
+}
+
+#logoutdiv {
+  display: flex;
+  align-items: center;
 }
 
 
