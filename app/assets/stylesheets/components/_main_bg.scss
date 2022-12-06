@@ -123,14 +123,15 @@ body{
   height: 83%;
   margin-left: 75px;
   position: absolute;
-  overflow-y:scroll;
   background-color: transparent;
   padding: 20px;
-  direction: rtl;
+  text-align: end;
 }
 
-.chatbox::-webkit-scrollbar-thumb{
-  border: 1px solid rgb(153, 153, 153);
+.chatroom::-webkit-scrollbar-thumb{
+  border: none;
+  background-color: #f7e0f761 ;
+
   width: 50px;
  }
 
