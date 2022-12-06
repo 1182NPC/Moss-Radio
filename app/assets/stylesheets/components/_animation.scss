@@ -1,0 +1,118 @@
+$colors: #B18BB2, #B18BB2, #B18BB2, #B18BB2, #B18BB2, #B18BB2, #B18BB2, #B18BB2, #8892C2, #8892C2, #B18BB2, #B18BB2, #B18BB2, #B18BB2, #8892C2, #8892C2;
+$colors-2: #8892C2, #8892C2, #8892C2, #A38EB8, #A38EB8, #A38EB8, #01a2fe, #0185fe, #0168fe, #014bfe, #0127fe, #010afe, #1300fd, #3100fe, #5500fe, #7602fe, #7100f6;
+$white: #fff;
+
+// * {
+//   box-sizing: border-box;
+//   &::before, &::after {
+//     box-sizing: border-box;
+//   }
+// }
+
+// body {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin: 0;
+//   min-height: 100vh;
+//   background: $white;
+//   overflow: hidden;
+// }
+
+.animation-container {
+  justify-content: center;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  /* height: 100%; */
+}
+
+#animation {
+  position: relative;
+  // width: 22.813rem;
+  // height: 22.813rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // height: 50%;
+  align-self: center;
+  width: 20%;
+}
+
+.circles {
+  display: flex;
+  flex-wrap: wrap;
+  .circle {
+    position: relative;
+    width: 1.563rem;
+    height: 1.563rem;
+    margin: -0.125rem;
+    border-radius: 50%;
+  }
+}
+
+@for $i from 1 through 16 {
+  @for $circle from 2 through 2 {
+    .circles:nth-child(#{$i}) .circle:nth-child(#{$circle}n) {
+      opacity: 0;
+      border: nth($colors, $i);
+      animation: circleSize 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      animation-delay: #{($circle * 0.1) - (($i - 1) * 0.1)}s;
+    }
+  }
+}
+
+@for $i from 1 through 17 {
+  @for $circle from 2 through 2 {
+    .circles:nth-child(#{$i}) .circle:not(:nth-child(#{$circle}n)) {
+      opacity: 1;
+      background: nth($colors-2, $i);
+      animation: circleSizeTwo 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      animation-delay: #{($circle * 0.1) - (($i - 1) * 0.1)}s;
+    }
+  }
+}
+
+@supports (display: grid) {
+  // body {
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-gap: 0.625rem;
+  //   grid-template-areas: ". main main ." ". main main .";
+  // }
+
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+@keyframes circleSize {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes circleSizeTwo {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
