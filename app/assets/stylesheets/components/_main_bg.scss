@@ -215,7 +215,7 @@ body{
   min-height: 100%;
 }
 
-.bar h1{
+.bar #slidevol{
   white-space: nowrap;
   font-family:'Inter';
   color: white;
@@ -229,6 +229,16 @@ body{
   -moz-animation: my-animation 15s linear infinite;
   -webkit-animation: my-animation 15s linear infinite;
   animation: my-animation 15s linear infinite;
+}
+
+.bar #live{
+  font-family:'Inter';
+  color: white;
+  font-size:medium;
+  position: relative;
+
+  margin-top: 3%;
+  --animate-duration:4s
 }
 
 /* for Firefox */
@@ -303,7 +313,7 @@ display: flex;
 }
 
 .fa-play{
-  padding-top: 5px
+  padding-top: 8px
 }
 .fa-solid{
   height: auto;
