@@ -1,7 +1,7 @@
-
-<div class="fa-play" data-controller="media">
-  <i id="play" data-action="click->media#play" data-media-target="icon" class="fa-solid fa-play"></i>
-  <%# <i class="fa-solid fa-volume"></i> %>
-  <audio id="player" src="http://stream.radioparadise.com/aac-128" data-media-target="player"></audio>
-  <input id="volume" type="range" data-action="change->media#volume" data-media-target="slider" class="background-color: green">
+<div id="centerplay">
+  <div class="fa-play">
+      <i id="play" data-action="click->media#play" data-media-target="icon" class="fa-solid fa-play"></i>
+    <%# <i class="fa-solid fa-volume"></i> %>
+    <audio id="player" src="http://stream.radioparadise.com/aac-128" data-media-target="player"></audio>
+  </div>
 </div>
