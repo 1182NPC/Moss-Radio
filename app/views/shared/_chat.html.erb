@@ -1,19 +1,16 @@
 <%# CHAT--------------------------------------CHAT %>
 
 
+  <div class="chatroom" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>" data-chatroom-subscription-target="scroll" style="max-height: 500px; overflow-y: scroll;">
 
-<div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>" data-chatroom-subscription-target="scroll">
+    <div class="messages animate__animated animate__fadeIn" data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
+        <%= render "shared/message", message: message %>
+      <% end %>
+    </div>
 
-  <h1 style="color: white;"><%= @chatroom.name %></h1>
 
-  <div class="messages animate__animated animate__fadeIn" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <%= render "shared/message", message: message %>
-    <% end %>
+
+    <%# <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button> %>
   </div>
-
-
-
-  <%# <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button> %>
-</div>
 <%# CHAT--------------------------------------CHAT %>
