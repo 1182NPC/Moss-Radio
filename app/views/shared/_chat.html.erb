@@ -4,7 +4,7 @@
 
 <div class="chatroom" data-controller="chatroom-subscription" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>" data-chatroom-subscription-target="scroll">
 
-  <h1><%= @chatroom.name %></h1>
+  <h1 style="color: white;"><%= @chatroom.name %></h1>
 
   <div class="messages animate__animated animate__fadeIn" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -12,7 +12,7 @@
     <% end %>
   </div>
 
-  
+
 
   <%# <button class="btn btn-primary" data-chatroom-subscription-target="join_button">Join</button> %>
 </div>

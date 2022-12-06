@@ -1,7 +1,7 @@
-<div id="message-<%= message.id %>" class="animate__animated animate__fadeIn">
+<div id="message-<%= message.id %>" class="animate__animated animate__fadeIn message">
   <small>
     <strong><%= message.user.nickname %></strong>
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
-  <p><%= message.content %></p>
+  <h6><%= message.content %></h6>
 </div>
