@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to edit_post_path(@post), notice: "Post was successfully created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,14 +27,18 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(post_params)
+    if @post.update(post_params)
+      redirect_to @post, notice: 'Article was successfully updated'
+    else
+      render :edit
     # raise
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: "Post was sucessfully destroyed"
   end
 
   def publish
@@ -47,6 +51,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :author, :date_published, :rich_body)
+    params.require(:post).permit(:title, :author, :date_published, :rich_body, photos: [])
   end
 end

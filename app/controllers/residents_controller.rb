@@ -18,7 +18,7 @@ class ResidentsController < ApplicationController
     @resident = Resident.new(resident_params)
     if @resident.save
       # WHICH PATH
-      redirect_to dashboard_path
+      redirect_to edit_resident_path(@resident), notice: "Resident was successfully created"
     else
       render :new, status: :unprocessable_entitiy
     end
@@ -31,8 +31,11 @@ class ResidentsController < ApplicationController
   def update
     # TODO: MAKE ADMIN ONLY
     @resident = set_resident
-    @resident.update(resident_params)
-    redirect_to dashboard_path
+    if @resident.update(resident_params)
+      redirect_to @resident, notice: "Resident was successfully updated"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -40,7 +43,7 @@ class ResidentsController < ApplicationController
     set_resident
     @resident.radiosets.destroy_all
     @resident.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: "Resident was sucessfully destroyed"
   end
 
   private
