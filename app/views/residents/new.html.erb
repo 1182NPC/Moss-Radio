@@ -4,7 +4,7 @@
     <%= f.input :bio %>
     <%= f.input :links %>
     <div class="bottom-buttons" style="display:flex;justify-content:space-around">
-      <%= f.submit class: "btn btn-primary"%>
-      <%= link_to "return to dashboard", "/dashboard", class:"btn btn-secondary"%>
+      <%= f.submit class: "btn btn-primary", id: "edit-button" %>
+      <%= link_to "return to dashboard", "/dashboard", class:"btn btn-secondary", id: "dashboard-button" %>
     </div>
   <% end %>
