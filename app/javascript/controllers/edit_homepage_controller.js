@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="edit-homepage"
 export default class extends Controller {
-  static targets = ["central_container", "chat"]
+  static targets = ["central_container", "chat", "showpage"]
 
   connect() {
     console.log("controller is here!")
@@ -93,6 +93,8 @@ export default class extends Controller {
    show() {
     this.chatTarget.classList.toggle('active');
   }
+
+  
 
 
 
