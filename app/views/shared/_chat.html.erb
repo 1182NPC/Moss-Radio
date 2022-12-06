@@ -1,7 +1,7 @@
 <%# CHAT--------------------------------------CHAT %>
 
 
-  <div class="chatroom" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>" data-chatroom-subscription-target="scroll" style="max-height: 500px; overflow-y: scroll;">
+  <div class="chatroom" data-chatroom-subscription-chatroom-id-value="<%=@chatroom.id %>" data-chatroom-subscription-target="scroll" style="max-height: 500px; direction: ltr;">
 
     <div class="messages animate__animated animate__fadeIn" data-chatroom-subscription-target="messages">
       <% @chatroom.messages.each do |message| %>

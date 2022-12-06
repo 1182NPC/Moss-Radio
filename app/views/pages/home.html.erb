@@ -74,9 +74,10 @@
           <%= f.submit "Send", class: "btn btn-primary mb-3" %>
         <% end %>
       </div>
-
-        <div class="chatbox">
+        <div class="chat-header">
           <h1 style="color: white;"><%= @chatroom.name %></h1>
+        </div>
+        <div class="chatbox">
           <%= render "shared/chat" %>
 
         </div>
