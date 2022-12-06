@@ -9,7 +9,7 @@
         <div style ="width: 60%;">
           <h2 class = "blog-header"><%= post.title %></h2>
           <h4><%= post.author %></h4>
-          <h5>Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h5>
+          <em><h5 style="color: #f7e0f7">Published: <%= post.date_published.strftime("%a %b %e at %l:%M %p") %></h5></em>
         </div>
           <div style = "width: 50%; text-align: right"><button style="font-size: 20px" id ="blogs" data-action="click->edit-homepage#post" data-value="<%=post.id%>">View Post</button></div>
       </div>
