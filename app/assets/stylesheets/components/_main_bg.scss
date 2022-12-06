@@ -49,7 +49,7 @@ body{
   }
 
   #navtop {
-
+//
     height: 32.5%;
   }
 
@@ -60,7 +60,6 @@ body{
   }
 
   #navbottom {
-
     height: 32.5%;
   }
 
@@ -206,6 +205,8 @@ body{
   background: rgba(255, 255, 255, 0.6);
   background-image: linear-gradient(#ff4500, #ff4500);
 } */
+
+
 #myVideo {
   position: fixed;
   background-size: cover;
@@ -215,7 +216,12 @@ body{
   min-height: 100%;
 }
 
-.bar h1{
+#centerplay {
+  display: flex;
+  justify-content: center;
+}
+
+.bar #slidevol{
   white-space: nowrap;
   font-family:'Inter';
   color: white;
@@ -229,6 +235,22 @@ body{
   -moz-animation: my-animation 15s linear infinite;
   -webkit-animation: my-animation 15s linear infinite;
   animation: my-animation 15s linear infinite;
+}
+
+.centeranimate {
+  display: flex;
+  justify-content: center;
+
+  #live {
+    margin-bottom: 0px;
+  }
+}
+
+.bar #live{
+  font-family:'Inter';
+  color: white;
+  font-size:medium;
+  --animate-duration:4s
 }
 
 /* for Firefox */
@@ -281,30 +303,95 @@ body{
   .admin-rocker {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 5px;
   }
 
 }
 .media{
   display: flex;
   gap: 28px;
+  align-items: center;
 }
 
-#points{
-display: none;
+
+
+
+.volume-control {
+
+  display: flex;
+  align-items: center;
+
+
+  #points{
+    width: 70px;
+    height: 15px;
+    border-radius: 5px;
+    visibility: hidden;
+  }
+
+  #vol {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 25px;
+    height: 25px;
+  }
+
+
+  input[type="range" i] {
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: #ffffff72;
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  input[type="range"]::-moz-range-track {
+    background: #ffffff72;
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -2.5px; /* Centers thumb on the track */
+    background-color: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+ }
+
+ .slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  }
+
+}
+
+.volume-control:hover #points {
+  visibility: visible;
+  transition: 0.5s;
 }
 
 #points.disp{
 display: flex;
 }
 
-#vol{
-  width: 34px;
-  height: auto;
-}
-
-.fa-play{
-  padding-top: 5px
-}
 .fa-solid{
   height: auto;
   cursor:grab;
@@ -312,7 +399,16 @@ display: flex;
   display: inline;
 }
 .nav-right{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
   width: 50%;
+  gap: 30px;
+}
+
+#logoutdiv {
+  display: flex;
+  align-items: center;
 }
 
 

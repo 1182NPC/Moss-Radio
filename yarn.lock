@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"3js@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/3js/-/3js-1.0.0.tgz#3fb0734fafd47bfdf46586c50d617872c99e32c5"
+  integrity sha512-yOlJqOfcF9pajjtU6ZCjpAEQWLT84FMbh4Tc5T3uGj9Cx6pkmMwQzzKTGQfCP5Mub6/vhsVk91K4+2agj4S+TA==
+
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
@@ -758,6 +763,11 @@ terser@^5.14.1:
     acorn "^8.5.0"
     commander "^2.20.0"
     source-map-support "~0.5.20"
+
+three@^0.147.0:
+  version "0.147.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.147.0.tgz#1974af9e8e0c1efb3a8561334d57c0b6c29a7951"
+  integrity sha512-LPTOslYQXFkmvceQjFTNnVVli2LaVF6C99Pv34fJypp8NbQLbTlu3KinZ0zURghS5zEehK+VQyvWuPZ/Sm8fzw==
 
 trix@^2.0.2:
   version "2.0.2"
