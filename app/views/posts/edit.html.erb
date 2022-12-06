@@ -6,9 +6,9 @@
     <%= f.rich_text_area :rich_body %>
     <%= f.input :date_published, as: :date, html5: true %>
     <div class="bottom-buttons" style="display:flex;justify-content:space-around">
-      <%= f.submit class: "btn btn-primary" %>
-      <%= link_to "Delete", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger"%>
-      <%= link_to "return to dashboard", "/dashboard", class:"btn btn-secondary"%>
+      <%= f.submit class: "btn btn-primary", id:'edit-button' %>
+      <%= link_to "Delete", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "sure?"}, class:"btn btn-danger", id:'delete-button'%>
+      <%= link_to "return to dashboard", "/dashboard", class:"btn btn-secondary", id:'dashboard-button'%>
       <% unless @post.published? %>
         <%# Links are ALWAYS a get request unless specified otherwise!!!  %>
         <%=link_to "Publish", post_publish_path(@post), data: {turbo_method: :patch}, class:"btn btn-success"%>
