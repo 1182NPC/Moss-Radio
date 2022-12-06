@@ -15,9 +15,10 @@ export default class extends Controller {
   }
 
   #insertMessageAndScrollDown(data) {
+    console.log(data)
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
     console.log(this.messagesTarget.scrollHeight)
-    this.scrollTarget.parentElement.scrollTo(0, this.messagesTarget.scrollHeight)
+    this.scrollTarget.scrollTo(0, this.messagesTarget.scrollHeight)
   }
 
   resetForm(event) {
