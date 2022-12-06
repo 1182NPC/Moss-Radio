@@ -130,7 +130,8 @@ body{
 }
 
 .chatbox::-webkit-scrollbar-thumb{
-  border: 1px solid rgb(153, 153, 153);
+  border: none;
+  background-color: #f7e0f761 ;
   width: 50px;
  }
 
