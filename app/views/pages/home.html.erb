@@ -7,7 +7,8 @@
       <div class="bar">
         <div class = "media">
             <%= render "shared/media_player" %>
-          <div class="inside"><h1>Streaming Live: DJ KEV N PERRY || <%= Time.now.strftime("%I:%M") %></h1></div>
+          <h1 class=" animate__animated animate__flash animate__infinite	infinite" id="live"> LIVE:</h1>
+          <div class="inside"><h1 id="slidevol">DJ KEV N PERRY || <%= Time.now.strftime("%I:%M") %></h1></div>
           <img id ="vol" src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1670319366/bx_bx-volume_bj7ddr.svg" alt="">
           <input type="range" id="points" name="points" min="0" max="10">
           </div>
