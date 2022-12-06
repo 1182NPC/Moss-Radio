@@ -26,6 +26,7 @@ h3 {
 
 .name-span {
   display: flex;
+  justify-content: space-between;
 }
 
 .audio-link {
@@ -43,12 +44,18 @@ iframe {
 #radio-sets {
   background: transparent;
   border: none;
-  font-size: 25px;
-  color: white;
+  font-size: 15px;
+  color: #f7e0f7;
   text-shadow: 2px 2px 2px #8E888C;
-  text-align: center;
 }
 
-.animate__animated.animate__fadeIn {
-  --animate-duration: 5s;
+#radio-sets:hover{
+  transition: 0.3s;
+  color: white;
+}
+
+.setslink{
+  display: flex;
+  align-items: start;
+
 }

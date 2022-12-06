@@ -34,7 +34,7 @@ User.create(email: "test@test.org", password: "123456", nickname: "nick", admin:
   User.create(email: Faker::Internet.email, password: "123456", nickname: Faker::Internet.username, admin: false)
 end
 
-Chatroom.create(name: "ChatMOSSphere")
+Chatroom.create(name: "Live Chat")
 
 
 

@@ -1,0 +1,53 @@
+
+.animation {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+}
+
+.illo {
+  width: 35vw;
+  height: 50vw;
+  position: absolute;
+}
+
+
+.st0 {
+  fill: none;
+  stroke: white;
+  stroke-miterlimit: 10;
+  opacity: 0.7;
+  animation: 5s fade-loop infinite ease-in-out;
+  // animation: 6s fade-in ease-in-out;
+  animation-fill-mode:forwards;
+}
+
+.s12  { animation-delay: 0s }
+.s11  { animation-delay: 0.5s }
+.s10  { animation-delay: 1s }
+.s9  { animation-delay: 1.5s }
+.s8  { animation-delay: 2s }
+.s7  { animation-delay: 2.5s }
+.s6  { animation-delay: 3s }
+.s5  { animation-delay: 3.5s }
+.s4  { animation-delay: 4s }
+.s3 { animation-delay: 4.5s }
+.s2 { animation-delay: 5s }
+.s1 { animation-delay: 5.5s }
+
+
+@keyframes fade-loop {
+  0%, 100% { opacity: 0; width: 10%; }
+  50%      { opacity: 1; width: 100%; }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
