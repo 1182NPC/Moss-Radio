@@ -7,7 +7,8 @@
   justify-content: space-between;
   flex-grow: 1;
   color:white;
-  
+  direction:ltr;
+
   h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
@@ -16,8 +17,9 @@
 
   .messages {
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     padding: 1rem;
+    direction: ltr;
   }
 
   #new_message {

@@ -120,20 +120,30 @@ body{
 
 .chatbox{
   width: 340px;
-  height: 83%;
+  height: 74%;
   margin-left: 75px;
+  margin-top:66px;
   position: absolute;
   background-color: transparent;
   padding: 20px;
   text-align: end;
+  overflow-y: scroll;
+  direction: rtl;
 }
 
-.chatroom::-webkit-scrollbar-thumb{
+.chatbox::-webkit-scrollbar-thumb{
   border: none;
   background-color: #f7e0f761 ;
-
   width: 50px;
+  direction: rtl;
  }
+
+.chat-header{
+  position: absolute;
+  color: white;
+  margin-left: 210px;
+  margin-top: 10px;
+}
 
 .btn-r img{
   position: absolute;
