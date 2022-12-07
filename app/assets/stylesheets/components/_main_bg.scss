@@ -351,7 +351,7 @@ body{
   input[type="range" i] {
     -webkit-appearance: none;
     background: transparent;
-    cursor: pointer;
+    cursor: grab;
     display: flex;
     justify-content: center;
   }
@@ -404,7 +404,7 @@ display: flex;
 
 .fa-solid{
   height: auto;
-  cursor:grab;
+  cursor: pointer;
   color: white;
   display: inline;
 }
@@ -428,3 +428,10 @@ display: flex;
     left: 23%;
     width: 70%;
 }
+
+#chat .btn-primary{
+    background: transparent;
+    border: none;
+    color: white;
+    text-shadow: 0px 2px 2px #8E888C;
+  }
