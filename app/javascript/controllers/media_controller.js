@@ -22,7 +22,7 @@ export default class extends Controller {
   }
 
   volume() {
-    this.playerTarget.volume = this.sliderTarget.value / 100
+    this.playerTarget.volume = this.sliderTarget.value / 10
     if (this.sliderTarget.value == 0){
       this.voloffTarget.src="https://res.cloudinary.com/dtvduhwrg/image/upload/v1670408509/bx_bx-volume_2_x1fgh5.svg"
     }else {

@@ -351,7 +351,7 @@ body{
   input[type="range" i] {
     -webkit-appearance: none;
     background: transparent;
-    cursor: pointer;
+    cursor: grab;
     display: flex;
     justify-content: center;
   }
@@ -404,7 +404,7 @@ display: flex;
 
 .fa-solid{
   height: auto;
-  cursor:grab;
+  cursor: pointer;
   color: white;
   display: inline;
 }
