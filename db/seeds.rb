@@ -19,7 +19,9 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
             "https://www.youtube.com/embed/KGwDl_0mAys",
             "https://www.youtube.com/watch?v=JK8ilaPZbKE&list=PLZUqUj66LOrF-KP4mhdmXszkKKvETyQap&index=3W"]
 
-sometitles = []
+sometitles = ["The Pace of Sonic Spatial Construction", "Notes on: Unsound festival", "Guest Editied by Re-record", "Perspectives: Grassroots organizers and industry professionals",
+              "Cue Point: DJ Heartstring", "Moss Radio in Residence: The December Sessions", "Under the Covers - Planned obsolescence", "Production techniques for the mix", "Is radio still relevant?",
+              "Source Material - House as a Funk revival", "Critical Infrastructure: Celebrating Grassroots Music Journalism"]
 
 puts 'Cleaning up database...'
 Post.destroy_all
@@ -32,7 +34,7 @@ puts 'Creating seeds...'
 
 User.create(email: "test@test.org", password: "123456", nickname: "nick", admin: true)
 
-100.times do
+50.times do
   User.create(email: Faker::Internet.email, password: "123456", nickname: Faker::Internet.username, admin: false)
 end
 
@@ -71,7 +73,7 @@ seed_post.photos.attach(io: File.open("#{multi_path}/multi_seed1.jpg"), filename
   Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
 end
 
-50.times do
+10.times do
   Post.create(title: sometitles.sample, rich_body: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true)
 end
 
@@ -80,7 +82,7 @@ somelinks.each do |link|
   Radioset.create(audio_link: link, resident_id: Resident.all.sample.id, date: Faker::Date.backward, title: "#{Faker::Games::WarhammerFantasy.hero} #{Faker::Music.genre}" )
 end
 
-200.times do
+100.times do
   Postlike.create(post_id: Post.all.sample.id, user_id: User.all.sample.id)
 end
 
