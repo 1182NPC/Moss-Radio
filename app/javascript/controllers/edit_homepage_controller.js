@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="edit-homepage"
 export default class extends Controller {
-  static targets = ["central_container", "chat", "showpage", "likes", "likebutton"]
+  static targets = ["central_container", "chat", "showpage", "likes", "likebutton", "likeanimation"]
 
   connect() {
     console.log("controller is here!")
@@ -87,6 +87,7 @@ export default class extends Controller {
       headers: { "Accept": "application/json" },
     }).then(response => response.json()).then((result) => {
       console.log('Success:', result);
+      this.likeanimationTarget.classList.add("animate__animated", "animate__tada")
       this.likesTarget.innerText = result.likes
       this.likebuttonTarget.style.display = "none";
     })
