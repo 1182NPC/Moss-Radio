@@ -19,9 +19,9 @@ somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/
             "https://www.youtube.com/embed/KGwDl_0mAys",
             "https://www.youtube.com/watch?v=JK8ilaPZbKE&list=PLZUqUj66LOrF-KP4mhdmXszkKKvETyQap&index=3W"]
 
-sometitles = ["The Pace of Sonic Spatial Construction", "Notes on: Unsound festival", "Guest Editied by Re-record", "Perspectives: Grassroots organizers and industry professionals",
-              "Cue Point: DJ Heartstring", "Moss Radio in Residence: The December Sessions", "Under the Covers - Planned obsolescence", "Production techniques for the mix", "Is radio still relevant?",
-              "Source Material - House as a Funk revival", "Critical Infrastructure: Celebrating Grassroots Music Journalism"]
+sometitles = ["The Pace of Sonic Spatial Construction", "Notes on: Unsound festival", "Guest Edited by Re-record", "Perspectives: Grassroots organisers and industry professionals",
+  "Cue Point: DJ Heartstring", "Moss Radio in Residence: The December Sessions", "Under the Covers - Planned obsolescence", "Production techniques for the mix", "Is radio still relevant?",
+  "Source Material - House as a Funk revival", "Critical Infrastructure: Celebrating Grassroots Music Journalism"]
 
 puts 'Cleaning up database...'
 Post.destroy_all
