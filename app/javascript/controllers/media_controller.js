@@ -22,7 +22,7 @@ export default class extends Controller {
   }
 
   volume() {
-    this.playerTarget.volume = this.sliderTarget.value / 100
+    this.playerTarget.volume = this.sliderTarget.value / 10
   }
 
 }
