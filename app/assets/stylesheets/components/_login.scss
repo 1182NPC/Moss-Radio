@@ -1,12 +1,28 @@
 .login{
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
+}
+
+#login-btn .btn {
+  padding: 0px;
+  font-size: 25px;
+  color: white;
+  text-shadow: 0px 2px 2px #8E888C;
+  margin-bottom: 10px;
 }
 
 .login-full {
   position: relative;
-  top: 10%;
+  top: 15%;
+}
+
+.mb-5 {
+  margin-bottom: 0rem !important;
+}
+
+.mt-5 {
+  margin-top: 0rem !important;
 }
 
 #login-flex{
@@ -37,4 +53,38 @@
 
 #login-btn input{
   color: white;
+}
+
+
+// forgot password page
+
+.forgot-wrapper {
+  justify-content: center;
+  display: flex;
+  position: relative;
+  top: 15%;
+}
+
+#new_user {
+  color: white;
+  text-shadow: 0px 2px 2px #8E888C;
+}
+
+#new_user .btn {
+  color: white;
+  text-shadow: 0px 2px 2px #8E888C;
+  padding: 0px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#new_user .btn:hover {
+  color: #f7e0f7;
+  transition: 0.5s;
+}
+
+.forgot-wrapper .col-md-4 {
+  padding: 0px;
+  text-align: left;
+  width: auto;
 }
