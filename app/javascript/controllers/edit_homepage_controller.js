@@ -17,10 +17,13 @@ export default class extends Controller {
       headers: { "Accept": "text/html" }
     })
       .then(response => response.text())
-      .then((data) => {
-        this.central_containerTarget.innerHTML = data
-      })
-
+      .then((html) => {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, "text/html");
+        this.central_containerTarget.innerHTML = ""
+        this.central_containerTarget.appendChild(doc.getElementById("posts-view"));
+        this.central_containerTarget.parentElement.scrollTo(0, 0)
+    })
   }
 
   radiosets(event) {
@@ -31,9 +34,13 @@ export default class extends Controller {
       headers: { "Accept": "text/html" }
     })
       .then(response => response.text())
-      .then((data) => {
-        this.central_containerTarget.innerHTML = data
-      })
+      .then((html) => {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, "text/html");
+        this.central_containerTarget.innerHTML = ""
+        this.central_containerTarget.appendChild(doc.getElementById("radiosets-view"));
+        this.central_containerTarget.parentElement.scrollTo(0, 0)
+    })
 
   }
 
@@ -45,11 +52,14 @@ export default class extends Controller {
       headers: { "Accept": "text/html" }
     })
       .then(response => response.text())
-      .then((data) => {
-        this.central_containerTarget.innerHTML = data
-      })
+      .then((html) => {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, "text/html");
+        this.central_containerTarget.innerHTML = ""
+        this.central_containerTarget.appendChild(doc.getElementById("residents-view"));
+        this.central_containerTarget.parentElement.scrollTo(0, 0)
+    })
   }
-
 
   post(event) {
     const value = event.target.dataset.value
@@ -60,9 +70,13 @@ export default class extends Controller {
       headers: { "Accept": "text/html" }
     })
       .then(response => response.text())
-      .then((data) => {
-        this.central_containerTarget.innerHTML = data
-      })
+      .then((html) => {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, "text/html");
+        this.central_containerTarget.innerHTML = ""
+        this.central_containerTarget.appendChild(doc.getElementById("blog-view"));
+        this.central_containerTarget.parentElement.scrollTo(0, 0)
+    })
   }
 
   resident(event) {
@@ -74,9 +88,13 @@ export default class extends Controller {
       headers: { "Accept": "text/html" }
     })
       .then(response => response.text())
-      .then((data) => {
-        this.central_containerTarget.innerHTML = data
-      })
+      .then((html) => {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, "text/html");
+        this.central_containerTarget.innerHTML = ""
+        this.central_containerTarget.appendChild(doc.getElementById("resident-show"));
+        this.central_containerTarget.parentElement.scrollTo(0, 0)
+    })
   }
 
   likepost(event) {
