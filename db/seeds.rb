@@ -74,7 +74,9 @@ multi_path = File.join(Rails.root, 'app/assets/images/multi_image_seed')
 seed_post.photos.attach(io: File.open("#{multi_path}/multi_seed1.jpg"), filename: 'multi_seed1.jpg',
                         content_type: 'image/jpg')
 
-Resident.create(name: "DJ KEV & PERRY", bio: "Just a couple of tune-lovers from the UK living in Berlin! Check out our set today at 15:00!", links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
+Resident.create(name: "DJ KEV & PERRY", bio: "Just a couple of tune-lovers from the UK living in Berlin! Having grown up up with a blend of inspirations ranging from King Gizzard and the Wizard Lizards,
+                John Hopkins, Four Tet and Floating Points, our performances comine an eclectic mix of musical styles, exhibiting experimental yet 'in its own way still coherent' sound design ideas moulded with narrative and cinematic structures.",
+                links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
 
 19.times do
   Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
