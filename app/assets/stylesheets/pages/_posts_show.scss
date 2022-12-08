@@ -60,3 +60,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.trix-content {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.trix-content a {
+color: rgb(199, 217, 255);
+}
+
+.trix-content a:hover {
+  color: #799cf6;
+  transition: 0.2s;
+  }
