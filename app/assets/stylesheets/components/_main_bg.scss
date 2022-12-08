@@ -464,3 +464,18 @@ display: flex;
     animation: fadeIn 2s ease infinite;
   }
 h1 { animation-delay: 800ms; }
+
+
+#recognitionStyling{
+  background-color: transparent !important;
+  border-radius: 20px;
+  color: white;
+  border-color: white !important;
+
+}
+
+::placeholder{
+  color: rgba(255, 255, 255, 0.558) !important;
+  background-color: transparent !important;
+
+}
