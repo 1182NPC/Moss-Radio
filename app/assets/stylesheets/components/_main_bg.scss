@@ -141,8 +141,8 @@ body{
 .chat-header{
   position: absolute;
   color: white;
-  margin-left: 175px;
-  margin-top: 10px;
+  margin-left: 249px;
+  margin-top: 42px;
 }
 
 .btn-r img{
@@ -477,5 +477,43 @@ h1 { animation-delay: 800ms; }
 ::placeholder{
   color: rgba(255, 255, 255, 0.558) !important;
   background-color: transparent !important;
+
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pulse{
+  width: 64px;
+  height: 64px;
+  background: #9C7FA4;
+  border: 1px solid rgba(255, 255, 255, 0.489);
+  backdrop-filter: blur(1px);
+  border-radius: 50%;
+  color: #9a76bc;
+  font-size: 20px;
+  text-align: center;
+  line-height: 64px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  animation: animate-pulse 3s linear infinite;
+  cursor: pointer
+}
+@keyframes animate-pulse{
+  0%{
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7),  0 0 0 0 rgba(251, 251, 251, 0.7);
+  }
+  40%{
+      box-shadow: 0 0 0 50px rgba(255, 255, 255, 0),  0 0 0 0 rgba(247, 247, 247, 0.7);
+  }
+  80%{
+      box-shadow: 0 0 0 50px rgba(255, 255, 255, 0),  0 0 0 30px rgba(255, 255, 255, 0);
+  }
+  100%{
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0),  0 0 0 30px rgba(251, 251, 251, 0);
+  }
 
 }
