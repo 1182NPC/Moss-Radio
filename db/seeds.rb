@@ -9,15 +9,20 @@ require 'faker'
 
 somelinks = ["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1287781423&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1299224062&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-            "https://www.youtube.com/embed/iXAbte4QXKs",
-            "https://www.youtube.com/embed/Njk2YAgNMnE",
-            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223078149&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175250309&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1359565429&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://www.youtube.com/embed/Njk2YAgNMnE", #this one is a good one
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/944872972&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301170935&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/34486647&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-            "https://www.youtube.com/embed/7sFPYfm67yA",
-            "https://www.youtube.com/embed/p5JM5r2J8r0",
-            "https://www.youtube.com/embed/KGwDl_0mAys",
-            "https://www.youtube.com/watch?v=JK8ilaPZbKE&list=PLZUqUj66LOrF-KP4mhdmXszkKKvETyQap&index=3W"]
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1384467310&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1251208174&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/815315500&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/570114879&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1397223793&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1378960729&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1397168932&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"]
+
+
 
 sometitles = ["The Pace of Sonic Spatial Construction", "Notes on: Unsound festival", "Guest Editied by Re-record", "Perspectives: Grassroots organizers and industry professionals",
               "Cue Point: DJ Heartstring", "Moss Radio in Residence: The December Sessions", "Under the Covers - Planned obsolescence", "Production techniques for the mix", "Is radio still relevant?",
@@ -69,7 +74,9 @@ multi_path = File.join(Rails.root, 'app/assets/images/multi_image_seed')
 seed_post.photos.attach(io: File.open("#{multi_path}/multi_seed1.jpg"), filename: 'multi_seed1.jpg',
                         content_type: 'image/jpg')
 
-Resident.create(name: "DJ KEV & PERRY", bio: "Just a couple of tune-lovers from the UK living in Berlin! Check out our set today at 15:00!", links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
+Resident.create(name: "DJ KEV & PERRY", bio: "Just a couple of tune-lovers from the UK living in Berlin! Having grown up up with a blend of inspirations ranging from King Gizzard and the Wizard Lizards,
+                John Hopkins, Four Tet and Floating Points, our performances comine an eclectic mix of musical styles, exhibiting experimental yet 'in its own way still coherent' sound design ideas moulded with narrative and cinematic structures.",
+                links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
 
 19.times do
   Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
