@@ -141,7 +141,7 @@ body{
 .chat-header{
   position: absolute;
   color: white;
-  margin-left: 210px;
+  margin-left: 175px;
   margin-top: 10px;
 }
 
@@ -451,3 +451,16 @@ display: flex;
     color: white;
     text-shadow: 0px 2px 2px #8E888C;
   }
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    };
+    100% {
+      opacity: 0.2;
+    }
+  }
+.fade-in {
+    animation: fadeIn 2s ease infinite;
+  }
+h1 { animation-delay: 800ms; }

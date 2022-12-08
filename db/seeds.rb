@@ -69,9 +69,12 @@ multi_path = File.join(Rails.root, 'app/assets/images/multi_image_seed')
 seed_post.photos.attach(io: File.open("#{multi_path}/multi_seed1.jpg"), filename: 'multi_seed1.jpg',
                         content_type: 'image/jpg')
 
+Resident.create(name: "DJ KEV & PERRY", bio: "Just a couple of tune-lovers from the UK living in Berlin! Check out our set today at 15:00!", links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
+
 19.times do
   Resident.create(name: Faker::Games::WarhammerFantasy.hero, bio: Faker::Games::WarhammerFantasy.quote, links: "#{Faker::Internet.url}", photo: Faker::Avatar.image)
 end
+
 
 10.times do
   Post.create(title: sometitles.sample, rich_body: Faker::Lorem.paragraph(sentence_count: 100), date_published: Faker::Date.backward, author: Faker::Ancient.god, user: User.all.sample, published: true)
